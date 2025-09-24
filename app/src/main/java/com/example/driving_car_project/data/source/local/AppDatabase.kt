@@ -26,7 +26,6 @@ import com.example.driving_car_project.util.converter.Converter
 @TypeConverters(Converter::class)
 abstract class AppDatabase :RoomDatabase() {
 
-    //Khai bao DAO
     abstract fun answerDao(): AnswerDao
     abstract fun examDao(): ExamDao
     abstract fun examHistoryDao(): ExamHistoryDao
