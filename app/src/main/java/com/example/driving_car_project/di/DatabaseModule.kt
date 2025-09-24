@@ -40,8 +40,6 @@ object DatabaseModule {
     @Provides
     fun provideExamHistoryDao(db: AppDatabase): ExamHistoryDao = db.examHistoryDao()
 
-    //@Provides
-    //fun provideGuideDao(db: AppDatabase): GuideDao = db.guideDao()
 
     @Provides
     fun provideQuestionDao(db: AppDatabase): QuestionDao = db.questionDao()
