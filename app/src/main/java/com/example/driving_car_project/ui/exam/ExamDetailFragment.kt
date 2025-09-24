@@ -79,7 +79,7 @@ class ExamDetailFragment : Fragment() {
                     currentQuestionIndex = viewModel.currentIndex.value
                     showQuestionAt(currentQuestionIndex)
                 } else {
-                    binding.tvExamQuestion.text = "Không có câu hỏi"
+                    binding.tvExamQuestion.text = getString(R.string.default_exam_question)
                     adapter.updateOption(emptyList())
                 }
             }
@@ -134,10 +134,10 @@ class ExamDetailFragment : Fragment() {
         lifecycleScope.launch {
             viewModel.showSubmitConfirm.collectLatest {
                 AlertDialog.Builder(requireContext())
-                    .setTitle("Xác nhận")
-                    .setMessage("Bạn đã đến câu cuối, có muốn nộp bài không?")
-                    .setPositiveButton("Nộp") { _, _ -> viewModel.submitExam() }
-                    .setNegativeButton("Hủy", null)
+                    .setTitle(getString(R.string.dialog_confirm))
+                    .setMessage(getString(R.string.dialog_message))
+                    .setPositiveButton(getString(R.string.dialog_submit)) { _, _ -> viewModel.submitExam() }
+                    .setNegativeButton(getString(R.string.dialog_cancel), null)
                     .show()
             }
         }
@@ -151,9 +151,9 @@ class ExamDetailFragment : Fragment() {
         }
         binding.btnSubmitExam.setOnClickListener {
             AlertDialog.Builder(requireContext())
-                .setTitle("Xác nhận")
-                .setMessage("Bạn có chắc muốn nộp bài không")
-                .setPositiveButton("Nộp") { _, _ ->
+                .setTitle(getString(R.string.dialog_confirm))
+                .setMessage(getString(R.string.dialog_message_submit))
+                .setPositiveButton(getString(R.string.dialog_submit)) { _, _ ->
                     try {
                         viewModel.submitExam()
                     } catch (e: Exception) {
@@ -164,7 +164,7 @@ class ExamDetailFragment : Fragment() {
                         ).show()
                     }
                 }
-                .setNegativeButton("Hủy", null)
+                .setNegativeButton(getString(R.string.dialog_cancel), null)
                 .show()
         }
         binding.btnGoHome.setOnClickListener {
@@ -180,7 +180,7 @@ class ExamDetailFragment : Fragment() {
             binding.tvExamQuestion.text = ""
             adapter.updateOption(emptyList())
             binding.imgExamQuestion.visibility = View.GONE
-            binding.tvQuestionTimer.text = "Câu 0/0"
+            binding.tvQuestionTimer.text = getString(R.string.default_question_time)
             return
         }
 

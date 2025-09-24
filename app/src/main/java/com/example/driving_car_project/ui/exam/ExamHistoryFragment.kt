@@ -11,7 +11,6 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.driving_car_project.R
 import com.example.driving_car_project.databinding.FragmentExamHistoryBinding
 import com.example.driving_car_project.ui.viewmodel.ExamHistoryViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -30,7 +29,7 @@ class ExamHistoryFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentExamHistoryBinding.inflate(inflater, container, false)
         return binding.root
     }

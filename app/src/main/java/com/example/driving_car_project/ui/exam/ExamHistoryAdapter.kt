@@ -31,20 +31,18 @@ class ExamHistoryAdapter(
             val history = item.history
             val exam = item.exam
 
-            //Ngay gio lam bai
             tvDate.text = dateFormat.format(history.takenAt)
 
-            // Dau/Truot
             if(history.passed) {
-                tvBadge.text = "Đậu"
+                tvBadge.text = itemView.context.getString(R.string.badge_pass)
                 tvBadge.setBackgroundResource(R.drawable.bg_badge_pass)
             } else {
-                tvBadge.text = "Trượt"
+                tvBadge.text = itemView.context.getString(R.string.badge_fail)
                 tvBadge.setBackgroundResource(R.drawable.bg_badge_fail)
             }
 
             // Ten de thi
-            tvExamTitle.text = exam?.title ?: "Đề đã bị xóa"
+            tvExamTitle.text = exam?.title ?: itemView.context.getString(R.string.default_tv_exam_title)
 
 
             // Diem so

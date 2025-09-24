@@ -29,7 +29,6 @@ class QuestionDetailFragment : Fragment() {
     private val viewModel: QuestionViewModel by viewModels()
     private lateinit var adapter: QuestionDetailAdapter
 
-    //current question list(for prev/next)
     private var currentList: List<Question> = emptyList()
     private var currentIndex: Int = 0
     private var currentQuestionId: Int = -1
@@ -105,30 +104,27 @@ class QuestionDetailFragment : Fragment() {
 
         viewModel.loadQuestionById(currentQuestionId)
 
-        // QuestionDetailFragment.kt (đổi phần click handler)
         binding.btnCheckAnswer.setOnClickListener {
             val selected = adapter.getSelectedOption()
             if (selected == null) {
-                Toast.makeText(requireContext(), "Vui lòng chọn 1 đáp án", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(),
+                    getString(R.string.toast_select_answer), Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
             // show UI tick/x trong adapter
             adapter.checkAnswer()
 
-            // Lấy đáp án đúng từ chính adapter (đảm bảo 100% khớp với UI)
+
             val correctOption = adapter.getCorrectOption()
 
             if (selected.isCorrect) {
-                // Chọn đúng → hiện thông báo + suggest của đáp án đúng
                 binding.tvAnswerResult.text = "Bạn chọn đúng!"
             } else {
-                // Chọn sai → hiện "Bạn chọn sai. Đáp án đúng: X"
                 binding.tvAnswerResult.text = "Bạn chọn sai. Đáp án đúng: ${correctOption?.label ?: "?"}"
             }
 
-            // luôn hiển thị suggest của đáp án đúng
-            binding.tvExplanation.text = correctOption?.suggest ?: "Không có giải thích"
+            binding.tvExplanation.text = correctOption?.suggest ?: getString(R.string.default_tv_explanation)
             binding.llResult.visibility = View.VISIBLE
         }
 
@@ -168,7 +164,6 @@ class QuestionDetailFragment : Fragment() {
             binding.imgQuestion.visibility = View.GONE
         }
 
-        // set options
         val options = q.toAnswerOptions()
         adapter.setData(options)
         binding.llResult.visibility = View.GONE

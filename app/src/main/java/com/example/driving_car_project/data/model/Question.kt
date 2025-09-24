@@ -3,7 +3,7 @@ package com.example.driving_car_project.data.model
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverters
-import com.example.driving_car_project.util.converter.Converter
+import com.example.driving_car_project.util.Converter
 
 @Entity(tableName = "questions")
 data class Question(

@@ -64,7 +64,7 @@
 
             <TextView
                 android:id="@+id/tv_history_duration"
-                android:text="@string/default_exam_duration"
+                android:text="@string/default_result_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </LinearLayout>

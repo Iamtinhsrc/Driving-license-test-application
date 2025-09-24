@@ -1,8 +1,6 @@
 package com.example.driving_car_project.data.source.local
 
-import android.content.Context
 import androidx.room.Database
-import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.example.driving_car_project.data.model.Answer
@@ -10,7 +8,7 @@ import com.example.driving_car_project.data.model.Exam
 import com.example.driving_car_project.data.model.ExamHistory
 import com.example.driving_car_project.data.model.Question
 import com.example.driving_car_project.data.model.QuestionType
-import com.example.driving_car_project.util.converter.Converter
+import com.example.driving_car_project.util.Converter
 
 @Database(
     entities = [

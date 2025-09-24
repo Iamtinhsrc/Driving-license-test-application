@@ -8,8 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.driving_car_project.R
+
 
 import com.example.driving_car_project.databinding.FragmentQuestionBinding
 import com.example.driving_car_project.ui.viewmodel.QuestionUiState
@@ -30,7 +29,7 @@ class QuestionFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentQuestionBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -38,7 +37,7 @@ class QuestionFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // read categoryId from args (default -1)
+        // Lay categoryId tu args (mac dinh = -1)
         val args = QuestionFragmentArgs.fromBundle(requireArguments())
         val categoryId = args.categoryId
 

@@ -65,7 +65,6 @@ class ExamViewModel @Inject constructor(
     private var passThresholdPercent = 80.0
     private val perQuestionSeconds = 30
 
-    /** Tạo đề và khởi chạy timer tổng. */
     fun createAndStartExam(numQuestions: Int, title: String? = null) {
         viewModelScope.launch(ioDispatcher) {
             var pool = repository.getLocalQuestions()
@@ -86,23 +85,21 @@ class ExamViewModel @Inject constructor(
             _currentIndex.value = 0
             _isRunning.value = true
 
-            // Exam timer theo số câu
             val totalSeconds = when (numQuestions) {
                 10 -> 300
                 20 -> 600
                 30 -> 900
-                else -> numQuestions * 30 // fallback
+                else -> numQuestions * 30
             }
             _examTimeLeft.value = totalSeconds
 
-            // Question timer init (mỗi câu 30s)
+            // Mỗi câu 30s)
             _questionTimeLeft.value = chosen.associate { it.id to perQuestionSeconds }
 
             startTimers()
         }
     }
 
-    /** Load exam để review (không chạy timer). */
     fun loadExam(examId: Int, isPreview: Boolean = false) {
         viewModelScope.launch(ioDispatcher) {
             val exam = repository.getExamById(examId) ?: return@launch
@@ -115,7 +112,7 @@ class ExamViewModel @Inject constructor(
             _isRunning.value = !isPreview
 
             if (isPreview) {
-                // 🔥 Load lại đáp án đã lưu để highlight đúng/sai
+                // Load lại đáp án đã lưu để highlight đúng/sai
                 val savedAnswers = repository.getAnswersByExamId(examId)
                 _selectedAnswers.value = savedAnswers.associate { it.questionId to (it.selectedAnswer ?: "") }
             } else {
@@ -133,7 +130,6 @@ class ExamViewModel @Inject constructor(
         }
     }
 
-    /** Tick timer mỗi giây. */
     private fun startTimers() {
         cancelTimer()
         timerJob = viewModelScope.launch(ioDispatcher) {
@@ -169,7 +165,6 @@ class ExamViewModel @Inject constructor(
         timerJob = null
     }
 
-    /** Auto fail câu chưa chọn. */
     private suspend fun autoFailQuestion(qId: Int) {
         val examId = _currentExam.value?.id ?: return
         if (!_selectedAnswers.value.containsKey(qId)) {
@@ -211,7 +206,6 @@ class ExamViewModel @Inject constructor(
                     _showSubmitConfirm.emit(Unit)
                 }
             }
-            // preview thì không làm gì (chỉ đứng yên ở câu cuối)
         }
     }
 

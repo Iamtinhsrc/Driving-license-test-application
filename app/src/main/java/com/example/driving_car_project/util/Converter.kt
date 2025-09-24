@@ -1,4 +1,4 @@
-package com.example.driving_car_project.util.converter
+package com.example.driving_car_project.util
 
 import androidx.room.TypeConverter
 import com.example.driving_car_project.data.model.Image

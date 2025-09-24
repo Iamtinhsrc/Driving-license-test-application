@@ -17,8 +17,8 @@ class ExamDetailAdapter(
 ) : RecyclerView.Adapter<ExamDetailAdapter.AnswerOptionViewHolder>(){
 
     var isReviewMode: Boolean = false
-    private var selectedLabel: String? = null // Chon A/B/C/D
-    private var showResult: Boolean = false // Trang thai nop bai
+    private var selectedLabel: String? = null
+    private var showResult: Boolean = false
 
     inner class AnswerOptionViewHolder(
         itemView: View
@@ -34,7 +34,7 @@ class ExamDetailAdapter(
             tvLabel.text = option.label
             tvText.text = option.text
 
-            // reset trạng thái mặc định
+            // reset trạng thái
             root.isSelected = false
             root.setBackgroundResource(R.drawable.selector_option_state)
             imgResult.visibility = View.GONE
@@ -42,7 +42,7 @@ class ExamDetailAdapter(
 
             if (showResult || isReviewMode) {
                 when {
-                    // Người dùng chọn đúng
+                    // Chọn đúng
                     option.label == selectedLabel && option.isCorrect -> {
                         root.setBackgroundResource(R.drawable.bg_option_correct)
                         imgResult.visibility = View.VISIBLE
@@ -53,14 +53,14 @@ class ExamDetailAdapter(
                         }
                     }
 
-                    // Người dùng chọn sai
+                    // Chọn sai
                     option.label == selectedLabel && !option.isCorrect -> {
                         root.setBackgroundResource(R.drawable.bg_option_wrong)
                         imgResult.visibility = View.VISIBLE
                         imgResult.setImageResource(android.R.drawable.ic_delete)
                     }
 
-                    // Người dùng không chọn gì nhưng đây là đáp án đúng
+                    // Người dùng không chọn gì
                     selectedLabel.isNullOrEmpty() && option.isCorrect -> {
                         root.setBackgroundResource(R.drawable.bg_option_correct)
                         imgResult.visibility = View.VISIBLE

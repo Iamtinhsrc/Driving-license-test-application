@@ -8,9 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.example.driving_car_project.R
 import com.example.driving_car_project.databinding.FragmentExamBinding
-import com.example.driving_car_project.databinding.FragmentHomeBinding
 import com.example.driving_car_project.ui.viewmodel.ExamViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
@@ -23,7 +21,6 @@ class ExamFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val viewModel: ExamViewModel by viewModels()
-    private lateinit var adapter: ExamAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,11 +33,6 @@ class ExamFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        adapter = ExamAdapter(emptyList()) { exam ->
-            val action = ExamFragmentDirections.actionExamFragmentToExamDetail(exam.id)
-            findNavController().navigate(action)
-        }
-        //binding.rvExams.adapter = adapter
 
         binding.toolbarExam.setNavigationOnClickListener {
             findNavController().navigateUp()

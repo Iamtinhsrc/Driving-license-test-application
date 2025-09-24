@@ -8,7 +8,6 @@ import com.example.driving_car_project.data.source.remote.ResponseResult
 import com.example.driving_car_project.di.IoDispatcher
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -50,19 +49,6 @@ class CategoryViewModel @Inject constructor(
         }
     }
 
-    fun refresh() {
-        viewModelScope.launch(ioDispatcher) {
-            _uiState.value = CategoryUiState.Loading
-            when (val r = repository.fetchQuestionTypes()) {
-                is ResponseResult.Success -> {
-                    val types = repository.getLocalQuestionTypes()
-                    _uiState.value = CategoryUiState.Success(types)
-                }
-                is ResponseResult.Error -> _uiState.value = CategoryUiState.Error(r.message)
-                ResponseResult.Loading -> _uiState.value = CategoryUiState.Loading
-            }
-        }
-    }
 }
 
 sealed class CategoryUiState {

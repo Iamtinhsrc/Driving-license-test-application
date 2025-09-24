@@ -26,12 +26,7 @@ class ExamHistoryViewModel @Inject constructor(
         viewModelScope.launch(ioDispatcher) {
             repository.getAllExamHistories()
                 .collect { list ->
-                    Log.d("ExamHistoryVM", "Histories loaded: ${list.size}")
                     _histories.value = list
-                    list.forEach {
-                        Log.d("ExamHistoryVM", "History: ${it.history.examId}, Exam: ${it.exam?.title}")
-                    }
-
                 }
         }
     }

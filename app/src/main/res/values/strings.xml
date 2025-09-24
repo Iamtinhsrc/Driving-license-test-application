@@ -49,7 +49,6 @@
     <string name="default_history_date">05/09/2025 14:20</string>
     <string name="default_exam_title">Đề 20 câu</string>
     <string name="default_exam_score">Đúng 15/20</string>
-    <string name="default_exam_duration">Thời gian: 18:35</string>
     <string name="default_text_question">Xe nào phải nhường đường trong tình huống này?</string>
     <string name="default_text_question_detail">Khi gặp biển báo này, người lái xe phải làm gì?</string>
     <string name="default_question_suggest">Bạn chọn sai. Đáp án đúng: B</string>
@@ -60,7 +59,23 @@
     <string name="default_exam_history">Chưa có lịch sử thi</string>
     <string name="default_result">Kết quả: 15/20 câu đúng</string>
     <string name="default_result_status">ĐẬU</string>
-    <string name="default_result_time">Thời gian làm: 18:35</string>
+    <string name="result_status_pass">Trượt</string>
+    <string name="default_result_time">Thời gian làm: 03:22</string>
+    <string name="default_question_time">00:00</string>
+    <string name="default_exam_question">Không có câu hỏi</string>
+    <string name="default_tv_exam_title">Đề đã bị xóa</string>
+    <string name="default_result_summary">Kết quả: --</string>
+    <string name="default_tv_explanation">Không có giải thích</string>
+    
+    <!-- Dialog-->
+    <string name="dialog_confirm">Xác nhận</string>
+    <string name="dialog_message">Bạn đã đến câu cuối, có muốn nộp bài không?</string>
+    <string name="dialog_message_submit">Bạn có chắc muốn nộp bài không</string>
+    <string name="dialog_submit">Nộp</string>
+    <string name="dialog_cancel">Hủy</string>
+
+
+    
 
     <!-- Question -->
     <string name="label_question">Câu 1/20</string>
@@ -85,4 +100,9 @@
 
     <string name="img_description">ảnh minh họa</string>
     <string name="label_question_number">Câu 1</string>
+    <string name="badge_pass">Đậu</string>
+    <string name="badge_fail">Trượt</string>
+    <string name="toast_select_answer">Vui lòng chọn 1 đáp án</string>
+
+
 </resources>

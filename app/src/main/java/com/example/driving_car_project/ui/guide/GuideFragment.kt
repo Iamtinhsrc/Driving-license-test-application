@@ -3,7 +3,6 @@ package com.example.driving_car_project.ui.guide
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.TextureView
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.text.HtmlCompat
@@ -18,8 +17,6 @@ class GuideFragment : Fragment() {
 
     private var _binding: FragmentGuideBinding? = null
     private val binding get() = _binding!!
-
-    private lateinit var tvGuide: TextureView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

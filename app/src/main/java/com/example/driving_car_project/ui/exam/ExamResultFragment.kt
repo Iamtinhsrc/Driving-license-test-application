@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -44,10 +43,10 @@ class ExamResultFragment : Fragment() {
                 if (matched != null) {
                     binding.tvResultSummary.text = "Kết quả: ${matched.history.score}/${matched.history.total} câu đúng"
                     if (matched.history.passed) {
-                        binding.tvResultStatus.text = "Đậu"
+                        binding.tvResultStatus.text = getString(R.string.default_result_status)
                         binding.tvResultStatus.setBackgroundResource(R.drawable.bg_badge_pass)
                     } else {
-                        binding.tvResultStatus.text = "Trượt"
+                        binding.tvResultStatus.text = getString(R.string.result_status_pass)
                         binding.tvResultStatus.setBackgroundResource(R.drawable.bg_badge_fail)
                     }
 
@@ -57,7 +56,7 @@ class ExamResultFragment : Fragment() {
                     binding.tvResultTime.text = "Thời gian làm: %02d:%02d".format(mm, ss)
 
                 } else {
-                    binding.tvResultSummary.text = "Kết quả: --"
+                    binding.tvResultSummary.text = getString(R.string.default_result_summary)
                     binding.tvResultStatus.text = ""
                     binding.tvResultTime.text = ""
                 }
@@ -65,7 +64,6 @@ class ExamResultFragment : Fragment() {
         }
 
         binding.btnReviewExam.setOnClickListener {
-            // Open ExamDetail in Preview mode
             val action = ExamResultFragmentDirections.actionResultToExamDetail(examId, true)
             findNavController().navigate(action)
         }

@@ -2,15 +2,12 @@ package com.example.driving_car_project.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.driving_car_project.data.model.AnswerOption
 import com.example.driving_car_project.data.model.Question
 import com.example.driving_car_project.data.source.Repository
 import com.example.driving_car_project.data.source.remote.ResponseResult
 import com.example.driving_car_project.di.IoDispatcher
-import com.example.driving_car_project.util.toAnswerOptions
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -52,24 +49,6 @@ class QuestionViewModel @Inject constructor(
                 }
             } catch (e: Exception) {
                 _uiState.value = QuestionUiState.Error(e.message ?: "Lỗi load câu hỏi")
-            }
-        }
-    }
-
-    fun refreshFromRemote() {
-        viewModelScope.launch(ioDispatcher) {
-            _uiState.value = QuestionUiState.Loading
-            when (val r = repository.fetchQuestions()) {
-                is ResponseResult.Success -> {
-                    val cached = repository.getLocalQuestions()
-                    _uiState.value = QuestionUiState.Success(cached)
-                }
-                is ResponseResult.Error -> {
-                    _uiState.value = QuestionUiState.Error(r.message)
-                }
-                else -> {
-                    _uiState.value = QuestionUiState.Loading
-                }
             }
         }
     }

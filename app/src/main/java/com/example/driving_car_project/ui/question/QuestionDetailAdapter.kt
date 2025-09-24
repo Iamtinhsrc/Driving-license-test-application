@@ -9,7 +9,6 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.driving_car_project.R
-import com.example.driving_car_project.data.model.Answer
 import com.example.driving_car_project.data.model.AnswerOption
 
 class QuestionDetailAdapter(
@@ -38,7 +37,6 @@ class QuestionDetailAdapter(
             imgResult.visibility = View.GONE
             tvSuggest.visibility = View.GONE
 
-            //
             if(isChecked){
                 if(option.isCorrect){
                     imgResult.visibility = View.VISIBLE

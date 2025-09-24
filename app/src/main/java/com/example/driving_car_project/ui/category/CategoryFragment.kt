@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.example.driving_car_project.R
 import com.example.driving_car_project.databinding.FragmentCategoryBinding
 import com.example.driving_car_project.ui.viewmodel.CategoryUiState
 import com.example.driving_car_project.ui.viewmodel.CategoryViewModel
@@ -27,7 +26,7 @@ class CategoryFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentCategoryBinding.inflate(inflater, container, false)
         return binding.root
     }
