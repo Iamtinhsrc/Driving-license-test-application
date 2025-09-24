@@ -19,7 +19,6 @@ interface DataSource {
         suspend fun getQuestionById(id: Int): Question?
         suspend fun getQuestionsByType(type: Int): List<Question>
         suspend fun getCriticalQuestions(): List<Question>
-        suspend fun searchQuestions(keyword: String): List<Question>
         suspend fun clearQuestions()
 
         // Answer

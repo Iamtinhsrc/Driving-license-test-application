@@ -19,7 +19,6 @@ interface Repository {
     // Local
     suspend fun saveQuestions(questions: List<Question>)
     suspend fun getLocalQuestions(): List<Question>
-    suspend fun searchLocalQuestions(keyword: String): List<Question>
     suspend fun getCriticalQuestions(): List<Question>
     suspend fun getQuestionsByType(type: Int): List<Question>
     suspend fun getQuestionById(id: Int): Question?

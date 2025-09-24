@@ -59,10 +59,6 @@ class DefaultRepository(
         return localDataSource.getAllQuestions()
     }
 
-    override suspend fun searchLocalQuestions(keyword: String): List<Question> {
-        return localDataSource.searchQuestions(keyword)
-    }
-
     override suspend fun getCriticalQuestions(): List<Question> {
         return localDataSource.getCriticalQuestions()
     }
