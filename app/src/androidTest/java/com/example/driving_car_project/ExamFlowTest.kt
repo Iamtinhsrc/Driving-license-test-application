@@ -53,7 +53,7 @@ class ExamFlowTest {
             IdlingRegistry.getInstance().register(idlingResource)
         }
 
-        //2
+        //2. Kiem tra UI
         onView(withId(R.id.tv_exam_question)).check(matches(isDisplayed()))
         onView(withId(R.id.rv_exam_answers)).check(matches(isDisplayed()))
 
@@ -81,7 +81,7 @@ class ExamFlowTest {
         onView(withText("Bạn có chắc muốn nộp bài không"))
             .check(matches(isDisplayed()))
 
-      // Bấm nút "OK" trong dialog (tuỳ text button trong dialog)
+       // Dialog
         onView(withText("Nộp")).perform(click())
 
         //5

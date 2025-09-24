@@ -13,7 +13,7 @@ class RecyclerViewItemCountIdlingResource(
     override fun getName(): String = RecyclerViewItemCountIdlingResource::class.java.name
 
     override fun isIdleNow(): Boolean {
-        val idle = recyclerView.adapter?.itemCount ?: 0 >= expectedCount
+        val idle = (recyclerView.adapter?.itemCount ?: 0) >= expectedCount
         if (idle) {
             callback?.onTransitionToIdle()
         }

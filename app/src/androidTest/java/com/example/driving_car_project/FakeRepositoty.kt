@@ -49,8 +49,6 @@ class FakeRepository @Inject constructor() : Repository {
         return list
     }
 
-
-    override suspend fun searchLocalQuestions(keyword: String): List<Question> = emptyList()
     override suspend fun getCriticalQuestions(): List<Question> = emptyList()
     override suspend fun getQuestionsByType(type: Int): List<Question> {
         return (1..10).map {
