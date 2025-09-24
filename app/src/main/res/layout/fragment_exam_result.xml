@@ -1,0 +1,50 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="@dimen/padding_large"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_result_summary"
+        android:text="@string/default_result"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tv_result_status"
+        android:text="@string/default_result_status"
+        android:textColor="@android:color/white"
+        android:background="@drawable/bg_badge_pass"
+        android:layout_marginTop="@dimen/margin_large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tv_result_time"
+        android:text="@string/default_result_time"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btn_review_exam"
+        android:text="@string/tv_review_exam"
+        android:layout_marginTop="@dimen/margin_large"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_button_primary"
+        android:textColor="@android:color/white"/>
+    <Button
+        android:id="@+id/btnHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_goHome"
+        android:layout_marginTop="@dimen/margin_large"
+        android:backgroundTint="@color/purple_500"
+        android:textColor="@android:color/white"/>
+
+</LinearLayout>

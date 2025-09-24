@@ -1,0 +1,74 @@
+package com.example.driving_car_project.ui.exam
+
+import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
+import com.example.driving_car_project.R
+import com.example.driving_car_project.databinding.FragmentExamBinding
+import com.example.driving_car_project.databinding.FragmentHomeBinding
+import com.example.driving_car_project.ui.viewmodel.ExamViewModel
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
+
+@AndroidEntryPoint
+class ExamFragment : Fragment() {
+
+    private var _binding: FragmentExamBinding? = null
+    private val binding get() = _binding!!
+
+    private val viewModel: ExamViewModel by viewModels()
+    private lateinit var adapter: ExamAdapter
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentExamBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        adapter = ExamAdapter(emptyList()) { exam ->
+            val action = ExamFragmentDirections.actionExamFragmentToExamDetail(exam.id)
+            findNavController().navigate(action)
+        }
+        //binding.rvExams.adapter = adapter
+
+        binding.toolbarExam.setNavigationOnClickListener {
+            findNavController().navigateUp()
+        }
+
+        binding.btnExam10.setOnClickListener {
+            viewModel.createAndStartExam(10, "Đề 10 câu")
+        }
+        binding.btnExam20.setOnClickListener {
+            viewModel.createAndStartExam(20, "Đề 20 câu")
+        }
+        binding.btnExam30.setOnClickListener {
+            viewModel.createAndStartExam(30, "Đề 30 câu")
+        }
+
+        lifecycleScope.launch {
+            viewModel.currentExam.collectLatest { exam ->
+                exam?.let {
+                    val action = ExamFragmentDirections.actionExamFragmentToExamDetail(it.id)
+                    findNavController().navigate(action)
+                }
+            }
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+}

@@ -1,0 +1,162 @@
+<h2 style="text-align:center;">📘 TÓM TẮT MẸO LÝ THUYẾT HỌC LÁI XE</h2>
+<hr/>
+
+<h3>I. CÁC KHÁI NIỆM CƠ BẢN</h3>
+<ul>
+  <li><b>Phần đường xe chạy:</b> Phần của đường bộ cho phương tiện giao thông qua lại.</li>
+  <li><b>Làn đường:</b> Chia theo chiều dọc, đủ rộng cho xe chạy an toàn.</li>
+  <li><b>Khổ giới hạn đường bộ:</b> Giới hạn chiều cao, chiều rộng của phương tiện & hàng hóa.</li>
+  <li><b>Dải phân cách:</b> Chia phần đường thành 2 chiều riêng biệt, có loại <b>cố định</b> và <b>di động</b>.</li>
+  <li><b>Người lái xe:</b> Người điều khiển xe cơ giới.</li>
+  <li><b>Đường ưu tiên:</b> Được các phương tiện khác nhường đường.</li>
+  <li><b>Phương tiện cơ giới đường bộ:</b> Gồm ô tô, xe máy, xe máy điện, xe tương tự.</li>
+  <li><b>Phương tiện thô sơ đường bộ:</b> Xe đạp, xe xích lô, xe đạp máy...</li>
+  <li><b>Người tham gia giao thông:</b> Người lái, hành khách, người đi bộ, dẫn súc vật.</li>
+  <li><b>Người điều khiển giao thông:</b> CSGT hoặc người được giao nhiệm vụ.</li>
+  <li><b>Dừng xe:</b> Đứng yên tạm thời.</li>
+  <li><b>Đỗ xe:</b> Đứng yên <b>không giới hạn</b> thời gian.</li>
+</ul>
+
+<hr/>
+<h3>II. QUY TẮC GIAO THÔNG</h3>
+<ol>
+  <li><b>Hiệu lệnh CSGT</b>
+    <ul>
+      <li>Tay giơ thẳng đứng: 🚫 tất cả dừng lại.</li>
+      <li>Tay giơ ngang: 🚦 trước-sau dừng, trái-phải được đi.</li>
+    </ul>
+  </li>
+
+  <li><b>Quy định GPLX</b>
+    <ul>
+      <li>Khai báo mất GPLX rồi sử dụng: bị <b>tước 5 năm</b>.</li>
+    </ul>
+  </li>
+
+  <li><b>Trong đô thị, khu đông dân cư</b>
+    <ul>
+      <li>🚫 Không bấm còi: 22h → 5h.</li>
+      <li>🚫 Không dùng đèn chiếu xa.</li>
+      <li>Được báo hiệu vượt bằng <b>đèn</b> trong khung giờ 22h → 5h.</li>
+      <li>Chỉ được quay đầu tại <b>nơi giao nhau hoặc có biển báo</b>.</li>
+    </ul>
+  </li>
+
+  <li><b>Nhường đường tại giao nhau</b>
+    <ul>
+      <li>Không có vòng xuyến: nhường <b>bên phải</b>.</li>
+      <li>Có vòng xuyến: nhường <b>bên trái</b>.</li>
+    </ul>
+  </li>
+
+  <li><b>Đỗ xe ô tô</b>
+    <ul>
+      <li>Cách lề ≤ 0.25m.</li>
+      <li>Cách xe đối diện ≥ 20m.</li>
+    </ul>
+  </li>
+
+  <li><b>Vạch kẻ đường</b>
+    <ul>
+      <li>Vạch liền: 🚫 không đè.</li>
+      <li>Vạch đứt: ✅ được phép đè.</li>
+      <li>Vạch vàng: phân chia <b>ngược chiều</b>.</li>
+      <li>Vạch trắng: phân chia <b>cùng chiều</b>.</li>
+    </ul>
+  </li>
+</ol>
+
+<hr/>
+<h3>III. TỐC ĐỘ & KHOẢNG CÁCH AN TOÀN</h3>
+
+<p><b>Trong khu đông dân cư (trừ cao tốc):</b></p>
+<table border="1" cellpadding="6" cellspacing="0">
+  <tr><th>Loại đường</th><th>Tốc độ tối đa (km/h)</th></tr>
+  <tr><td>Đường đôi, 1 chiều ≥ 2 làn</td><td>60</td></tr>
+  <tr><td>Đường 2 chiều, 1 chiều 1 làn</td><td>50</td></tr>
+</table>
+
+<p><b>Ngoài khu đông dân cư (trừ cao tốc):</b></p>
+<table border="1" cellpadding="6" cellspacing="0">
+  <tr><th>Loại xe</th><th>Đường đôi/1 chiều ≥ 2 làn</th><th>Đường 2 chiều/1 làn</th></tr>
+  <tr><td>Ô tô ≤ 28 chỗ, tải ≤ 3.5 tấn</td><td>90</td><td>80</td></tr>
+  <tr><td>Ô tô > 28 chỗ, tải > 3.5 tấn</td><td>80</td><td>70</td></tr>
+  <tr><td>Xe buýt, mô tô, xe chuyên dùng</td><td>70</td><td>60</td></tr>
+  <tr><td>Xe đầu kéo, xe xi téc, rơ moóc</td><td>60</td><td>50</td></tr>
+</table>
+
+<p><b>Khoảng cách an toàn:</b></p>
+<table border="1" cellpadding="6" cellspacing="0">
+  <tr><th>Tốc độ (km/h)</th><th>Khoảng cách tối thiểu (m)</th></tr>
+  <tr><td>60</td><td>35</td></tr>
+  <tr><td>60 &lt; V ≤ 80</td><td>55</td></tr>
+  <tr><td>80 &lt; V ≤ 100</td><td>70</td></tr>
+  <tr><td>100 &lt; V ≤ 120</td><td>100</td></tr>
+</table>
+
+<hr/>
+<h3>IV. HOẠT ĐỘNG VẬN TẢI</h3>
+<ul>
+  <li>Lái xe ô tô: tối đa <b>10h/ngày</b>, không liên tục quá <b>4h</b>.</li>
+  <li>Hành khách: miễn phí hành lý ≤ <b>20kg</b>.</li>
+  <li><b>GPLX các hạng:</b> từ A1, A2, B, C, D, E...</li>
+  <li><b>Tuổi cấp GPLX:</b>
+    <ul>
+      <li>≥16 tuổi: xe máy.</li>
+      <li>≥18 tuổi: A1, A, B1, B, C1.</li>
+      <li>≥21 tuổi: C, BE.</li>
+      <li>≥24 tuổi: D1, D2, CE.</li>
+      <li>≥27 tuổi: D, DE.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr/>
+<h3>V. ĐỘNG CƠ & HỆ THỐNG Ô TÔ</h3>
+<ul>
+  <li><b>Động cơ 4 kỳ:</b> 4 hành trình.</li>
+  <li><b>Động cơ 2 kỳ:</b> 2 hành trình.</li>
+  <li><b>Ly hợp:</b> truyền/ngắt truyền động.</li>
+  <li><b>Hộp số:</b> cho xe chạy lùi & thay đổi tốc độ.</li>
+  <li><b>Phanh:</b> giảm tốc độ/dừng.</li>
+  <li><b>Ắc quy:</b> tích điện.</li>
+  <li><b>Máy phát:</b> phát điện.</li>
+</ul>
+
+<hr/>
+<h3>VI. KỸ THUẬT LÁI XE</h3>
+<ul>
+  <li>Khởi hành: đạp ly hợp hết hành trình, vào số 1.</li>
+  <li>Lái xe số tự động: không dùng chân trái.</li>
+  <li>Đường trơn: ❌ không phanh gấp, ❌ không đánh lái ngoặt.</li>
+  <li>Mưa, sương mù: bật đèn chiếu gần + vàng, đi chậm.</li>
+  <li>Lên dốc: về số thấp, gần đỉnh đi chậm.</li>
+  <li>Qua đường sắt: dừng, quan sát kỹ.</li>
+  <li>Phanh xe máy: giảm ga, dùng cả phanh trước & sau.</li>
+  <li><b>Niên hạn:</b>
+    <ul>
+      <li>Xe tải: 25 năm.</li>
+      <li>Xe khách > 9 chỗ: 20 năm.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr/>
+<h3>VII. BIỂN BÁO & SA HÌNH</h3>
+<ul>
+  <li>Thứ tự ưu tiên xe: <b>ô tô con → khách → tải → máy kéo → ô tô kéo rơ moóc → máy kéo kéo rơ moóc</b>.</li>
+  <li><b>Nguyên tắc xử lý sa hình (ưu tiên giảm dần):</b>
+    <ol>
+      <li>Xe đã vào ngã tư.</li>
+      <li>Xe ưu tiên (công an, cứu hỏa, cứu thương...).</li>
+      <li>Tín hiệu đèn giao thông.</li>
+      <li>Đường ưu tiên.</li>
+      <li>Đường cùng cấp:
+        <ul>
+          <li>Nhường bên phải.</li>
+          <li>Xe rẽ phải → xe đi thẳng → xe rẽ trái.</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+</ul>

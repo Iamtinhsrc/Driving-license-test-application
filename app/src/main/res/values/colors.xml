@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blue">#009688</color>
+    <color name="blue_700">#2196F3</color>
+    <color name="gray">#554C4B</color>
+    <color name="purple_700">#673AB7</color>
+    <color name="purple_500">#6C3AC5</color>
+    <color name="light_gray">#635756</color>
+    <color name="primary">#2962FF</color>
+    <color name="success">#2E7D32</color>
+    <color name="error">#C62828</color>
+    <color name="neutral_100">#F2F4F7</color>
+
+</resources>

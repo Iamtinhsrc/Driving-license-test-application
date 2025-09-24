@@ -1,0 +1,60 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_option"
+    android:orientation="vertical"
+    android:padding="@dimen/padding_large"
+    android:background="@drawable/selector_option_state"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="@dimen/item_min_height">
+
+    <!-- Hàng ngang: Label + nội dung + icon kết quả -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Chữ cái đáp án (A/B/C/D) -->
+        <TextView
+            android:id="@+id/tv_option_label"
+            android:text="@string/label_answer_a"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_large"
+            android:layout_marginEnd="@dimen/margin_large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!-- Nội dung đáp án -->
+        <TextView
+            android:id="@+id/tv_option_text"
+            android:text="@string/default_answer"
+            android:textSize="@dimen/text_large"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <!-- Icon kết quả (ẩn khi đang làm) -->
+        <ImageView
+            android:id="@+id/img_result"
+            android:layout_width="@dimen/img_result_width"
+            android:layout_height="@dimen/img_result_height"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:visibility="gone"
+            android:contentDescription="@string/app_name"
+            android:src="@android:drawable/checkbox_on_background"/>
+    </LinearLayout>
+
+    <!-- Giải thích hiển thị khi kiểm tra đáp án -->
+    <TextView
+        android:id="@+id/tv_suggest"
+        android:visibility="gone"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:textSize="@dimen/text_medium"
+        android:textColor="@android:color/darker_gray"
+        android:lineSpacingExtra="@dimen/line_spacing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="@string/default_suggest"/>
+
+</LinearLayout>

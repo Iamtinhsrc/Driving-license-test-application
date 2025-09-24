@@ -1,0 +1,208 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/padding_xlarge"
+    android:background="@android:color/background_light"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Thanh trên: thời gian + tiến độ -->
+    <LinearLayout
+        android:id="@+id/header_timer"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="@dimen/padding_large"
+        android:background="@drawable/bg_chip_gray"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/tv_timer"
+            android:text="@string/tv_time"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_large"
+            android:textColor="@android:color/holo_red_dark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Space android:layout_width="@dimen/layout_width" android:layout_height="@dimen/layout_height"/>
+
+        <TextView
+            android:id="@+id/tv_question_index"
+            android:text="@string/label_question"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <!-- Timer 30s/câu dạng chip -->
+    <TextView
+        android:id="@+id/tv_question_timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_small"
+        android:background="@drawable/bg_chip_timer"
+        android:text="@string/tv_time_exam"
+        android:textSize="@dimen/text_medium"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/header_timer"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+
+    <!-- CardView câu hỏi -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_question"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_large"
+        app:cardCornerRadius="@dimen/card_radius"
+        app:cardElevation="@dimen/card_elevation"
+        app:layout_constraintTop_toBottomOf="@id/tv_question_timer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="@dimen/padding_large"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_exam_question"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_large"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="@string/default_text_question"/>
+
+            <ImageView
+                android:id="@+id/img_exam_question"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:layout_marginTop="8dp"
+                android:contentDescription="@string/app_name"
+                android:visibility="gone"
+                tools:visibility="visible"
+                tools:src="@drawable/ic_launcher_foreground"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Danh sách đáp án -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_exam_answers"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/padding_xxlarge"
+        tools:listitem="@layout/item_answer_option"
+        app:layout_constraintTop_toBottomOf="@id/card_question"
+        app:layout_constraintBottom_toTopOf="@id/ll_question_result"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- CardView kết quả -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/ll_question_result"
+        android:visibility="gone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium"
+        app:cardCornerRadius="@dimen/card_radius"
+        app:cardElevation="@dimen/card_elevation"
+        app:layout_constraintBottom_toTopOf="@id/bottom_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="@dimen/padding_large"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_question_feedback"
+                android:text="@string/default_question_suggest"
+                android:textSize="@dimen/text_medium"
+                android:textColor="@android:color/holo_red_dark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="@string/default_question_suggest_2"/>
+
+            <Button
+                android:id="@+id/btn_show_explanation"
+                android:text="@string/tv_explanation"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_explanation"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:textSize="@dimen/text_medium"
+                android:lineSpacingExtra="@dimen/line_spacing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="@string/tv_explanation_2"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Thanh dưới -->
+    <LinearLayout
+        android:id="@+id/bottom_bar"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="@dimen/padding_medium"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:id="@+id/btn_prev"
+            android:text="@string/btn_prev"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <Space android:layout_width="@dimen/layout_width" android:layout_height="@dimen/layout_height"/>
+
+        <Button
+            android:id="@+id/btn_next"
+            android:text="@string/btn_next"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <Space android:layout_width="@dimen/layout_width" android:layout_height="@dimen/layout_height"/>
+
+        <Button
+            android:id="@+id/btn_submit_exam"
+            android:text="@string/btn_submit"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/btnGoHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_goHome"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

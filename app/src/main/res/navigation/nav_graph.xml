@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <!-- Home -->
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.driving_car_project.ui.home.HomeFragment"
+        android:label="Home">
+        <!-- 5 nút -->
+        <action android:id="@+id/action_home_to_questions"
+            app:destination="@id/questionFragment" />
+        <action android:id="@+id/action_home_to_category"
+            app:destination="@id/categoryFragment" />
+        <action android:id="@+id/action_home_to_exam"
+            app:destination="@id/examFragment" />
+        <action android:id="@+id/action_home_to_history"
+            app:destination="@id/examHistoryFragment" />
+        <action android:id="@+id/action_home_to_guide"
+            app:destination="@id/guideFragment" />
+    </fragment>
+
+    <!-- QuestionFragment: dùng cho cả "600 câu" (categoryId = -1) và "theo chủ đề" -->
+    <fragment
+        android:id="@+id/questionFragment"
+        android:name="com.example.driving_car_project.ui.question.QuestionFragment"
+        android:label="Danh sách câu hỏi">
+        <!-- -1 = tất cả; >=0 = lọc theo questionType -->
+        <argument android:name="categoryId" app:argType="integer" android:defaultValue="-1"/>
+        <action android:id="@+id/action_question_to_detail"
+            app:destination="@id/questionDetailFragment" />
+    </fragment>
+
+    <!-- Chi tiết 1 câu hỏi -->
+    <fragment
+        android:id="@+id/questionDetailFragment"
+        android:name="com.example.driving_car_project.ui.question.QuestionDetailFragment"
+        android:label="Chi tiết câu hỏi">
+        <argument android:name="questionId" app:argType="integer" />
+        <argument android:name="categoryId" app:argType="integer" android:defaultValue="-1" />
+    </fragment>
+
+    <!-- CategoryFragment (8 chủ đề từ API) -->
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.example.driving_car_project.ui.category.CategoryFragment"
+        android:label="Chủ đề">
+        <!-- chuyển tới QuestionFragment, truyền categoryId khi navigate -->
+        <action android:id="@+id/action_category_to_questions"
+            app:destination="@id/questionFragment" />
+    </fragment>
+
+    <!-- ExamFragment: danh sách đề (10/20/30) -->
+    <fragment
+        android:id="@+id/examFragment"
+        android:name="com.example.driving_car_project.ui.exam.ExamFragment"
+        android:label="Thi thử">
+        <!-- chọn đề -> sang ExamDetailFragment (truyền examId khi tạo xong) -->
+        <action android:id="@+id/action_examFragment_to_examDetail"
+            app:destination="@id/examDetailFragment" />
+    </fragment>
+
+    <!-- ExamDetailFragment: làm bài hoặc xem lại (preview) -->
+    <fragment
+        android:id="@+id/examDetailFragment"
+        android:name="com.example.driving_car_project.ui.exam.ExamDetailFragment"
+        android:label="Chi tiết bài thi">
+        <argument android:name="examId" app:argType="integer" android:defaultValue="-1"/>
+        <argument android:name="isPreview" app:argType="boolean" android:defaultValue="false"/>
+        <!-- sau submit -> ExamResult -->
+        <action android:id="@+id/action_examDetail_to_result"
+            app:destination="@id/examResultFragment" />
+        <action android:id="@+id/action_examDetail_to_home"
+            app:destination="@id/homeFragment"/>
+    </fragment>
+
+    <!-- ExamResultFragment: hiện kết quả, có thể xem lại -->
+    <fragment
+        android:id="@+id/examResultFragment"
+        android:name="com.example.driving_car_project.ui.exam.ExamResultFragment"
+        android:label="Kết quả thi">
+        <argument android:name="examId" app:argType="integer" />
+        <!-- từ kết quả -> mở lại examDetail ở chế độ preview -->
+        <action android:id="@+id/action_result_to_examDetail"
+            app:destination="@id/examDetailFragment" />
+        <action android:id="@+id/action_result_to_home"
+            app:destination="@+id/homeFragment"/>
+    </fragment>
+
+    <!-- Exam history: danh sách lần thi -->
+    <fragment
+        android:id="@+id/examHistoryFragment"
+        android:name="com.example.driving_car_project.ui.exam.ExamHistoryFragment"
+        android:label="Lịch sử thi">
+        <!-- click item -> ExamResultFragment (pass examId) -->
+        <action android:id="@+id/action_history_to_result"
+            app:destination="@id/examResultFragment" />
+    </fragment>
+
+    <!-- Guide: tĩnh -->
+    <fragment
+        android:id="@+id/guideFragment"
+        android:name="com.example.driving_car_project.ui.guide.GuideFragment"
+        android:label="Hướng dẫn / Lý thuyết" />
+</navigation>

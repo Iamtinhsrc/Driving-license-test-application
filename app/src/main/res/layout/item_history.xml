@@ -1,0 +1,75 @@
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_medium"
+    android:foreground="?attr/selectableItemBackground"
+    android:elevation="@dimen/card_elevation">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="@dimen/padding_large"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Hàng trên: Ngày giờ + Badge -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_history_date"
+                android:text="@string/default_history_date"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_large"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_pass_badge"
+                android:text="@string/default_result_status"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:background="@drawable/bg_badge_pass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/padding_large"
+                android:paddingRight="@dimen/padding_large"/>
+        </LinearLayout>
+
+        <!-- Hàng 2: Tên đề + số câu/điểm -->
+        <TextView
+            android:id="@+id/tv_exam_title"
+            android:text="@string/default_exam_title"
+            android:textSize="@dimen/text_medium"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_history_score"
+                android:text="@string/default_exam_score"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <Space android:layout_width="@dimen/layout_width" android:layout_height="@dimen/layout_height"/>
+
+            <TextView
+                android:id="@+id/tv_history_duration"
+                android:text="@string/default_exam_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
