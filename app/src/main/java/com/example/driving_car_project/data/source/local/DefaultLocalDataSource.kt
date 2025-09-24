@@ -17,7 +17,6 @@ class DefaultLocalDataSource(
     private val answerDao = db.answerDao()
     private val examDao = db.examDao()
     private val examHistoryDao = db.examHistoryDao()
-    //private val guideDao = db.guideDao()
     private val questionTypeDao = db.questionTypeDao()
 
     // Question
@@ -41,9 +40,6 @@ class DefaultLocalDataSource(
         return questionDao.getCriticals()
     }
 
-    override suspend fun searchQuestions(keyword: String): List<Question> {
-        return questionDao.searchByKeyword(keyword)
-    }
 
     override suspend fun clearQuestions() {
         return questionDao.clear()

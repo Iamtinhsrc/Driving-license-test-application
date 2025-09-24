@@ -16,8 +16,6 @@ interface AnswerDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(answers: List<Answer>)
 
-    @Query("SELECT * FROM answers WHERE examId = :id LIMIT 1")
-    suspend fun getById(id: Int): Answer?
 
     @Query("SELECT * FROM answers WHERE examId = :examId")
     fun observerByExamId(examId: Int): Flow<List<Answer>>

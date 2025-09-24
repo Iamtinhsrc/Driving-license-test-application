@@ -23,12 +23,6 @@ interface ExamDao {
     @Query("SELECT * FROM exams ORDER BY createAt DESC")
     fun observeAll(): Flow<List<Exam>>
 
-    @Query("SELECT * FROM exams ORDER BY createAt DESC")
-    suspend fun getAll(): List<Exam>
-
-    @Query("SELECT * FROM exams")
-    fun getAllExams(): Flow<List<Exam>>
-
     @Delete
     suspend fun delete(exam: Exam)
 

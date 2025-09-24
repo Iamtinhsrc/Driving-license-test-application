@@ -31,27 +31,6 @@ interface QuestionDao {
     @Query("SELECT * FROM questions WHERE critical = 1")
     suspend fun getCriticals(): List<Question>
 
-    @Query("SELECT * FROM questions ORDER BY RANDOM() LIMIT :limit")
-    suspend fun getRandomQuestions(limit: Int): List<Question>
-
-
-    @Query("SELECT id FROM questions ORDER BY RANDOM() LIMIT :limit")
-    suspend fun getRandomIds(limit: Int): List<Int>
-
-    @Query("""
-        SELECT id FROM questions
-        WHERE questionType = :type
-        ORDER BY RANDOM() LIMIT :limit
-    """)
-    suspend fun getRandomIdsByType(type: Int, limit: Int): List<Int>
-
-    @Query("""
-        SELECT * FROM questions
-        WHERE question LIKE '%' || :keyword || '%'
-        ORDER BY id ASC
-    """)
-    suspend fun searchByKeyword(keyword: String): List<Question>
-
     @Query("DELETE FROM questions")
     suspend fun clear()
 }
