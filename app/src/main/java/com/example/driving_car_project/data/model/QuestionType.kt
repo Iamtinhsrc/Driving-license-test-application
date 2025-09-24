@@ -16,13 +16,3 @@ data class QuestionType(
 data class QuestionTypeResponse(
     val types: List<QuestionType>
 )
-
-// 1-n
-data class QuestionTypeWithQuestions(
-    @Embedded val type: QuestionType,
-    @Relation(
-        parentColumn = "id",
-        entityColumn = "questionType"
-    )
-    val questions: List<Question>
-)

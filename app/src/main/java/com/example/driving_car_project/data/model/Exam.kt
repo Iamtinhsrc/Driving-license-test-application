@@ -10,7 +10,7 @@ import java.util.Date
 @Entity(tableName = "exams")
 data class Exam(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
-    val title: String,           // Loai de 10-20-30 cau
-    val questionIds: List<Int>,  // Danh sach cau hoi Random
-    val createAt: Date = Date()  // Ngay tao de
+    val title: String,
+    val questionIds: List<Int>,
+    val createAt: Date = Date()
 )

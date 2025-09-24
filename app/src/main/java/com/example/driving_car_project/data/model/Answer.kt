@@ -13,8 +13,8 @@ data class Answer(
 
 
 data class AnswerOption(
-    val label: String,          // A / B / C / D / E
-    val text: String,           // Nội dung đáp án
-    val isCorrect: Boolean,    // Sau khi kiểm tra mới set
+    val label: String,
+    val text: String,
+    val isCorrect: Boolean,
     val suggest: String? = null
 )

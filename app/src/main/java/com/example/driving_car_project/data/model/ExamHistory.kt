@@ -9,12 +9,12 @@ import java.util.Date
 @Entity(tableName = "exam_history")
 data class ExamHistory(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
-    val examId: Int,              // Lien ket Exam
-    val score: Int,               // So cau dung
-    val total: Int,               // Tong so cau
-    val passed: Boolean,          // Dau hay truot
-    val takenAt: Date = Date(),   // Thoi gian lam bai
-    val durationSeconds: Int = 0  // Khoang thoi gian lam bai
+    val examId: Int,
+    val score: Int,
+    val total: Int,
+    val passed: Boolean,
+    val takenAt: Date = Date(),
+    val durationSeconds: Int = 0
 )
 
 // 1-1
@@ -25,15 +25,5 @@ data class HistoryWithExam(
         entityColumn = "id"
     )
     val exam: Exam?
-)
-
-// 1-n
-data class ExamWithHistories(
-    @Embedded val exam: Exam,
-    @Relation(
-        parentColumn = "id",
-        entityColumn = "examId"
-    )
-    val histories: List<ExamHistory>
 )
 
