@@ -1,15 +1,24 @@
+# IDE
 *.iml
+/.idea/
+
+# Gradle
 .gradle
 /local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
+/build/
+/captures/
+/out/
+
+# External build
 .externalNativeBuild
 .cxx
-local.properties
+
+# OS
+.DS_Store
+
+# Keep Gradle wrapper 
+!gradle/wrapper/gradle-wrapper.jar
+gradle/wrapper/gradle-wrapper.properties
+
+# Logs / temp
+*.log
