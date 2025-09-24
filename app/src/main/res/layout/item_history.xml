@@ -12,7 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!-- Hàng trên: Ngày giờ + Badge -->
         <LinearLayout
             android:orientation="horizontal"
             android:gravity="center_vertical"
@@ -40,7 +39,6 @@
                 android:paddingRight="@dimen/padding_large"/>
         </LinearLayout>
 
-        <!-- Hàng 2: Tên đề + số câu/điểm -->
         <TextView
             android:id="@+id/tv_exam_title"
             android:text="@string/default_exam_title"

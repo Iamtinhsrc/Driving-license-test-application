@@ -8,14 +8,12 @@
     android:layout_height="wrap_content"
     android:minHeight="@dimen/item_min_height">
 
-    <!-- Hàng ngang: Label + nội dung + icon kết quả -->
     <LinearLayout
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!-- Chữ cái đáp án (A/B/C/D) -->
         <TextView
             android:id="@+id/tv_option_label"
             android:text="@string/label_answer_a"
@@ -25,7 +23,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-        <!-- Nội dung đáp án -->
         <TextView
             android:id="@+id/tv_option_text"
             android:text="@string/default_answer"
@@ -34,7 +31,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
 
-        <!-- Icon kết quả (ẩn khi đang làm) -->
         <ImageView
             android:id="@+id/img_result"
             android:layout_width="@dimen/img_result_width"
@@ -45,7 +41,6 @@
             android:src="@android:drawable/checkbox_on_background"/>
     </LinearLayout>
 
-    <!-- Giải thích hiển thị khi kiểm tra đáp án -->
     <TextView
         android:id="@+id/tv_suggest"
         android:visibility="gone"

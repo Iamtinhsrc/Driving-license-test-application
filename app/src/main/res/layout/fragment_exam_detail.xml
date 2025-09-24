@@ -7,7 +7,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Thanh trên: thời gian + tiến độ -->
     <LinearLayout
         android:id="@+id/header_timer"
         android:orientation="horizontal"
@@ -40,7 +39,6 @@
             android:layout_height="wrap_content"/>
     </LinearLayout>
 
-    <!-- Timer 30s/câu dạng chip -->
     <TextView
         android:id="@+id/tv_question_timer"
         android:layout_width="wrap_content"
@@ -56,7 +54,6 @@
         android:layout_marginTop="8dp"/>
 
 
-    <!-- CardView câu hỏi -->
     <androidx.cardview.widget.CardView
         android:id="@+id/card_question"
         android:layout_width="0dp"
@@ -86,16 +83,16 @@
                 android:id="@+id/img_exam_question"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:scaleType="centerCrop"
                 android:layout_marginTop="8dp"
                 android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop"
                 android:visibility="gone"
-                tools:visibility="visible"
-                tools:src="@drawable/ic_launcher_foreground"/>
+                tools:ignore="ImageContrastCheck"
+                tools:src="@drawable/ic_launcher_foreground"
+                tools:visibility="visible" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <!-- Danh sách đáp án -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_exam_answers"
         android:layout_width="0dp"
@@ -109,7 +106,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- CardView kết quả -->
     <androidx.cardview.widget.CardView
         android:id="@+id/ll_question_result"
         android:visibility="gone"
@@ -157,7 +153,6 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <!-- Thanh dưới -->
     <LinearLayout
         android:id="@+id/bottom_bar"
         android:orientation="horizontal"
@@ -175,7 +170,8 @@
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            tools:ignore="VisualLintButtonSize" />
 
         <Space android:layout_width="@dimen/layout_width" android:layout_height="@dimen/layout_height"/>
 
@@ -185,7 +181,8 @@
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            tools:ignore="VisualLintButtonSize" />
 
         <Space android:layout_width="@dimen/layout_width" android:layout_height="@dimen/layout_height"/>
 
@@ -195,7 +192,8 @@
             style="@style/Widget.MaterialComponents.Button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            tools:ignore="VisualLintButtonSize" />
         <Button
             android:id="@+id/btnGoHome"
             android:layout_width="wrap_content"

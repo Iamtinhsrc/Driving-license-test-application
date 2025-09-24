@@ -4,11 +4,11 @@
     android:foreground="?android:attr/selectableItemBackground"
     android:layout_margin="8dp"
     android:background="@drawable/bg_card"
-    android:elevation="4dp">
+    android:elevation="@dimen/card_elevation">
 
     <LinearLayout
         android:orientation="horizontal"
-        android:padding="12dp"
+        android:padding="@dimen/padding_large"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 

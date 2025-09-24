@@ -11,7 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!-- Header: số câu -->
         <TextView
             android:id="@+id/tv_question_index"
             android:text="@string/label_question_all"
@@ -22,7 +21,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-        <!-- Nội dung câu hỏi -->
         <TextView
             android:id="@+id/tv_question_detail"
             android:textStyle="bold"
@@ -32,7 +30,6 @@
             android:layout_height="wrap_content"
             tools:text="@string/default_text_question_detail"/>
 
-        <!-- Ảnh minh họa (GONE nếu không có) -->
         <ImageView
             android:id="@+id/img_question"
             android:layout_width="match_parent"
@@ -45,7 +42,6 @@
             tools:src="@drawable/ic_launcher_foreground"
             tools:visibility="visible" />
 
-        <!-- Danh sách đáp án -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_answers"
             android:layout_width="match_parent"
@@ -54,7 +50,6 @@
             android:clipToPadding="false"
             tools:listitem="@layout/item_answer_option"/>
 
-        <!-- Nút kiểm tra -->
         <Button
             android:id="@+id/btn_check_answer"
             android:text="@string/tv_check_answer"
@@ -65,7 +60,6 @@
             android:textColor="@android:color/white"
             tools:ignore="VisualLintButtonSize" />
 
-        <!-- Kết quả câu trả lời + giải thích -->
         <LinearLayout
             android:id="@+id/ll_result"
             android:visibility="gone"
@@ -95,7 +89,6 @@
                 tools:text="@string/default_explanation_question_detail"/>
         </LinearLayout>
 
-        <!-- Điều hướng nhanh -->
         <LinearLayout
             android:orientation="horizontal"
             android:layout_marginTop="@dimen/margin_large"

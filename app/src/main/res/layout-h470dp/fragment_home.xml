@@ -3,9 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="@dimen/padding_xlarge">
 
-    <!-- Guidelines -->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_top"
         android:layout_width="wrap_content"
@@ -35,70 +34,63 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.85" />
 
-    <!-- Buttons in vertical chain -->
-    <Button
-        android:id="@+id/btn_questions"
+    <LinearLayout
+        android:id="@+id/btn_container"
+        android:orientation="vertical"
+        android:gravity="center"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/btn_all_questions"
-        android:background="@drawable/bg_button_primary"
-        android:textColor="@color/white"
-        android:layout_marginBottom="@dimen/margin_large"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/margin_medium"
         app:layout_constraintTop_toTopOf="@id/guideline_top"
-        app:layout_constraintStart_toStartOf="@id/guideline_start"
-        app:layout_constraintEnd_toEndOf="@id/guideline_end"
-        app:layout_constraintBottom_toTopOf="@id/btn_category"
-        app:layout_constraintVertical_chainStyle="packed" />
-
-    <Button
-        android:id="@+id/btn_category"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/btn_category"
-        android:background="@drawable/bg_button_primary"
-        android:textColor="@color/white"
-        android:layout_marginBottom="@dimen/margin_large"
-        app:layout_constraintTop_toBottomOf="@id/btn_questions"
-        app:layout_constraintBottom_toTopOf="@id/btn_exam"
-        app:layout_constraintStart_toStartOf="@id/guideline_start"
-        app:layout_constraintEnd_toEndOf="@id/guideline_end" />
-
-    <Button
-        android:id="@+id/btn_exam"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/btn_exam"
-        android:background="@drawable/bg_button_primary"
-        android:textColor="@color/white"
-        android:layout_marginBottom="@dimen/margin_large"
-        app:layout_constraintTop_toBottomOf="@id/btn_category"
-        app:layout_constraintBottom_toTopOf="@id/btn_history"
-        app:layout_constraintStart_toStartOf="@id/guideline_start"
-        app:layout_constraintEnd_toEndOf="@id/guideline_end" />
-
-    <Button
-        android:id="@+id/btn_history"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/btn_history"
-        android:background="@drawable/bg_button_primary"
-        android:textColor="@color/white"
-        android:layout_marginBottom="@dimen/margin_large"
-        app:layout_constraintTop_toBottomOf="@id/btn_exam"
-        app:layout_constraintBottom_toTopOf="@id/btn_guide"
-        app:layout_constraintStart_toStartOf="@id/guideline_start"
-        app:layout_constraintEnd_toEndOf="@id/guideline_end" />
-
-    <Button
-        android:id="@+id/btn_guide"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/btn_guide"
-        android:background="@drawable/bg_button_primary"
-        android:textColor="@color/white"
-        app:layout_constraintTop_toBottomOf="@id/btn_history"
         app:layout_constraintBottom_toBottomOf="@id/guideline_bottom"
         app:layout_constraintStart_toStartOf="@id/guideline_start"
-        app:layout_constraintEnd_toEndOf="@id/guideline_end" />
+        app:layout_constraintEnd_toEndOf="@id/guideline_end">
+
+        <Button
+            android:id="@+id/btn_questions"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_large"
+            android:background="@drawable/bg_button_primary"
+            android:text="@string/btn_all_questions"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btn_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_large"
+            android:background="@drawable/bg_button_primary"
+            android:text="@string/btn_category"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btn_exam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_large"
+            android:background="@drawable/bg_button_primary"
+            android:text="@string/btn_exam"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btn_history"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_large"
+            android:background="@drawable/bg_button_primary"
+            android:text="@string/btn_history"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btn_guide"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_button_primary"
+            android:minHeight="48dp"
+            android:text="@string/btn_guide"
+            android:textColor="@color/white" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

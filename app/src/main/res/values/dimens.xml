@@ -25,7 +25,7 @@
     <dimen name="icon_small">20dp</dimen>
     <dimen name="icon_medium">40dp</dimen>
 
-    <!-- Card corner radius & elevation -->
+    <!-- Card corner -->
     <dimen name="card_radius">12dp</dimen>
     <dimen name="card_elevation">4dp</dimen>
 
