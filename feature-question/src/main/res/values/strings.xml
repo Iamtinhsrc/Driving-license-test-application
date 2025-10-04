@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="toast_select_answer">Vui lòng chọn 1 đáp án</string>
+    <string name="default_tv_explanation">Không có giải thích</string>
+</resources>

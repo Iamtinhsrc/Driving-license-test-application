@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App -->
+    <string name="app_name">Driving Car</string>
+
+    <!-- Toolbar titles -->
+    <string name="title_home">Trang chủ</string>
+    <string name="title_questions">Danh sách câu hỏi</string>
+    <string name="title_question_detail">Chi tiết câu hỏi</string>
+    <string name="title_category">Phân loại</string>
+    <string name="title_exam">Đề thi</string>
+    <string name="title_exam_detail">Chi tiết bài thi</string>
+    <string name="title_exam_history">Lịch sử thi</string>
+    <string name="title_exam_result">Kết quả thi</string>
+    <string name="title_guide">Hướng dẫn / Lý thuyết</string>
+
+    <!-- Home buttons -->
+    <string name="btn_all_questions">600 câu hỏi</string>
+    <string name="btn_category">Theo chủ đề</string>
+    <string name="btn_exam">Thi thử</string>
+    <string name="btn_history">Lịch sử</string>
+    <string name="btn_guide">Hướng dẫn / Lý thuyết</string>
+
+    <!-- Exam quick choices -->
+    <string name="btn_exam_10">Đề 10 câu</string>
+    <string name="btn_exam_20">Đề 20 câu</string>
+    <string name="btn_exam_30">Đề 30 câu</string>
+
+    <!-- Labels -->
+    <string name="label_answer_a">A</string>
+    <string name="label_answer_b">B</string>
+    <string name="label_answer_c">C</string>
+    <string name="label_answer_d">D</string>
+    <string name="label_home">Home</string>
+    <string name="label_questions">Danh sách câu hỏi</string>
+    <string name="label_question_detail">Chi tiết câu hỏi</string>
+    <string name="label_category">Chủ đề</string>
+    <string name="label_exam">Thi thử</string>
+    <string name="label_exam_detail">Chi tiết bài thi</string>
+    <string name="label_exam_result">Kết quả thi</string>
+    <string name="label_exam_history">Lịch sử thi</string>
+    <string name="label_guide">Hướng dẫn / Lý thuyết</string>
+
+    <!-- Default texts -->
+    <string name="default_answer">Phải giảm tốc độ và nhường đường...</string>
+    <string name="default_suggest">Lề đường không sử dụng cho các phương tiện giao thông qua lại</string>
+    <string name="default_category_title">Khái niệm và quy tắc</string>
+    <string name="default_category_quantity">166 câu</string>
+    <string name="default_history_date">05/09/2025 14:20</string>
+    <string name="default_exam_title">Đề 20 câu</string>
+    <string name="default_exam_score">Đúng 15/20</string>
+    <string name="default_text_question">Xe nào phải nhường đường trong tình huống này?</string>
+    <string name="default_text_question_detail">Khi gặp biển báo này, người lái xe phải làm gì?</string>
+    <string name="default_question_suggest">Bạn chọn sai. Đáp án đúng: B</string>
+    <string name="default_question_suggest_2">Bạn chọn đúng!</string>
+    <string name="default_question_content">Nội dung rút gọn...</string>
+    <string name="default_exam_text">Chọn đề thi để luyện tập</string>
+    <string name="default_explanation_question_detail">Giải thích: Biển cấm rẽ trái, vì vậy...</string>
+    <string name="default_exam_history">Chưa có lịch sử thi</string>
+    <string name="default_result">Kết quả: 15/20 câu đúng</string>
+    <string name="default_result_status">ĐẬU</string>
+    <string name="result_status_pass">Trượt</string>
+    <string name="default_result_time">Thời gian làm: 03:22</string>
+    <string name="default_question_time">00:00</string>
+    <string name="default_exam_question">Không có câu hỏi</string>
+    <string name="default_tv_exam_title">Đề đã bị xóa</string>
+    <string name="default_result_summary">Kết quả: --</string>
+    <string name="default_tv_explanation">Không có giải thích</string>
+    
+    <!-- Dialog-->
+    <string name="dialog_confirm">Xác nhận</string>
+    <string name="dialog_message">Bạn đã đến câu cuối, có muốn nộp bài không?</string>
+    <string name="dialog_message_submit">Bạn có chắc muốn nộp bài không</string>
+    <string name="dialog_submit">Nộp</string>
+    <string name="dialog_cancel">Hủy</string>
+
+
+    
+
+    <!-- Question -->
+    <string name="label_question">Câu 1/20</string>
+    <string name="label_question_all">Câu 1/600</string>
+
+    <string name="tv_time">10:00</string>
+    <string name="tv_time_exam">00:30</string>
+    <string name="tv_explanation">Xem giải thích</string>
+    <string name="tv_explanation_2">Giải thích: Xe A nhường xe B vì ...</string>
+
+
+    <string name="btn_prev">Trước</string>
+    <string name="btn_next">Tiếp</string>
+    <string name="btn_submit">Nộp bài</string>
+    <string name="btn_goHome">Trang chủ</string>
+
+    <string name="tv_review_exam">Xem lại chi tiết</string>
+    <string name="tv_goHome">Về Trang Chủ</string>
+    <string name="title_toolbar_guide">Mẹo lý thuyết</string>
+    <string name="tv_check_answer">Kiểm tra đáp án</string>
+    <string name="tv_answer_result">Bạn chọn sai. Đáp án đúng: C</string>
+
+    <string name="img_description">ảnh minh họa</string>
+    <string name="label_question_number">Câu 1</string>
+    <string name="badge_pass">Đậu</string>
+    <string name="badge_fail">Trượt</string>
+    <string name="toast_select_answer">Vui lòng chọn 1 đáp án</string>
+
+
+</resources>

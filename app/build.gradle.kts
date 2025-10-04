@@ -48,10 +48,31 @@ android {
 }
 
 dependencies {
+
+    implementation(project(":core-model"))
+    implementation(project(":core-database"))
+    implementation(project(":core-network"))
+    implementation(project(":core-utils"))
+    implementation(project(":core-di"))
+    implementation(project(":core-ui"))
+    implementation(project(":core-resources"))
+    implementation(project(":core-navigation"))
+
+    implementation(project(":feature-question"))
+    implementation(project(":feature-exam"))
+    implementation(project(":feature-history"))
+    implementation(project(":feature-category"))
+    implementation(project(":feature-guide"))
+    implementation(project(":feature-home"))
+
+    implementation(project(":infrastructure"))
+
     // Lifecycle
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.4")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.8.4")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.4")
+    implementation("androidx.fragment:fragment-ktx:1.8.2")
+
 
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
@@ -109,5 +130,7 @@ dependencies {
 
     androidTestImplementation("com.google.dagger:hilt-android-testing:2.48")
     kspAndroidTest("com.google.dagger:hilt-compiler:2.48")
+    implementation(kotlin("script-runtime"))
+
 
 }

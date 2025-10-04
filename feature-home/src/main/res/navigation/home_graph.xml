@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.driving_car_project.home.HomeFragment"
+        android:label="@string/label_home">
+
+        <action android:id="@+id/action_home_to_questions"
+            app:destination="@id/question_graph" />
+
+        <action android:id="@+id/action_home_to_category"
+            app:destination="@id/category_graph" />
+
+        <action android:id="@+id/action_home_to_exam"
+            app:destination="@id/exam_graph" />
+
+        <action android:id="@+id/action_home_to_history"
+            app:destination="@id/history_graph" />
+
+        <action android:id="@+id/action_home_to_guide"
+            app:destination="@id/guide_graph" />
+    </fragment>
+</navigation>

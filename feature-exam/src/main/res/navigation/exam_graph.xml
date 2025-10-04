@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/exam_graph"
+    app:startDestination="@id/examFragment">
+
+    <fragment
+        android:id="@+id/examFragment"
+        android:name="com.example.driving_car_project.exam.ExamFragment"
+        android:label="Thi thử">
+        <action android:id="@+id/action_examFragment_to_examDetail"
+            app:destination="@id/examDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/examDetailFragment"
+        android:name="com.example.driving_car_project.exam.ExamDetailFragment"
+        android:label="@string/label_exam_detail">
+        <argument android:name="examId" app:argType="integer" android:defaultValue="-1"/>
+        <argument android:name="isPreview" app:argType="boolean" android:defaultValue="false"/>
+        <action android:id="@+id/action_examDetail_to_result"
+            app:destination="@id/examResultFragment" />
+        <!--<action android:id="@+id/action_examDetail_to_home"
+            app:destination="@id/home_graph"/> -->
+    </fragment>
+
+    <fragment
+        android:id="@+id/examResultFragment"
+        android:name="com.example.driving_car_project.exam.ExamResultFragment"
+        android:label="@string/label_exam_result">
+        <argument android:name="examId" app:argType="integer" />
+        <action android:id="@+id/action_result_to_examDetail"
+            app:destination="@id/examDetailFragment" />
+        <deepLink app:uri="app://exam_result/{examId}" />
+        <!--action android:id="@+id/action_result_to_home"
+            app:destination="@id/home_graph" -->
+    </fragment>
+
+</navigation>

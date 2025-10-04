@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_exam_question">Không có câu hỏi</string>
+    <string name="default_question_time">00:00</string>
+    <string name="default_result_status">ĐẬU</string>
+    <string name="result_status_pass">Trượt</string>
+    <string name="default_result_summary">Kết quả: --</string>
+
+    <string name="dialog_confirm">Xác nhận</string>
+    <string name="dialog_message">Bạn đã đến câu cuối, có muốn nộp bài không?</string>
+    <string name="dialog_message_submit">Bạn có chắc muốn nộp bài không</string>
+    <string name="dialog_submit">Nộp</string>
+    <string name="dialog_cancel">Hủy</string>
+
+</resources>

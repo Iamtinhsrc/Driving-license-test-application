@@ -1,8 +1,7 @@
-package com.example.driving_car_project.ui
+package com.example.driving_car_project
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.driving_car_project.R
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

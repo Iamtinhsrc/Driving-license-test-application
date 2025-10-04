@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/question_graph"
+    app:startDestination="@id/questionFragment">
+
+    <fragment
+        android:id="@+id/questionFragment"
+        android:name="com.example.driving_car_project.question.QuestionFragment"
+        android:label="@string/label_questions">
+        <argument android:name="categoryId" app:argType="integer" android:defaultValue="-1"/>
+        <action android:id="@+id/action_question_to_detail"
+            app:destination="@id/questionDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/questionDetailFragment"
+        android:name="com.example.driving_car_project.question.QuestionDetailFragment"
+        android:label="@string/label_question_detail">
+        <argument android:name="questionId" app:argType="integer" />
+        <argument android:name="categoryId" app:argType="integer" android:defaultValue="-1" />
+    </fragment>
+</navigation>

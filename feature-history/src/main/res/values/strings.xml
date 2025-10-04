@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="badge_pass">Đậu</string>
+    <string name="badge_fail">Trượt</string>
+    <string name="default_tv_exam_title">Đề đã bị xóa</string>
+</resources>
