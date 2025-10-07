@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
 import com.example.driving_car_project.ExamNavigator
 import com.example.driving_car_project.feature.exam.databinding.FragmentExamBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -38,9 +37,9 @@ class ExamFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        binding.toolbarExam.setNavigationOnClickListener {
-            findNavController().navigateUp()
-        }
+//        binding.toolbarExam.setNavigationOnClickListener {
+//            findNavController().navigateUp()
+//        }
 
         binding.btnExam10.setOnClickListener {
             viewModel.createAndStartExam(10, "Đề 10 câu")

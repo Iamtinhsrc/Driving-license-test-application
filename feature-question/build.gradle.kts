@@ -43,8 +43,8 @@ dependencies {
 
     implementation(project(":core-model"))
     implementation(project(":core-utils"))
-    implementation(project(":core-ui"))
     implementation(project(":core-resources"))
+    implementation(project(":core-network"))
     implementation(project(":core-di"))
     implementation(project(":core-navigation"))
     implementation(project(":infrastructure"))
@@ -74,7 +74,6 @@ dependencies {
     implementation(libs.androidx.room.ktx)
     implementation(libs.androidx.room.common)
     implementation(libs.androidx.espresso.contrib)
-    implementation(project(":core-network"))
     ksp(libs.androidx.room.compiler)
 
     // Hilt

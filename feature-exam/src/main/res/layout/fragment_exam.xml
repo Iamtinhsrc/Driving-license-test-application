@@ -5,24 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbarExam"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:navigationIcon="@drawable/ic_back"
-            app:title="@string/title_exam"
-            app:titleTextColor="@android:color/white" />
-    </com.google.android.material.appbar.AppBarLayout>
 
     <TextView
         android:id="@+id/tv_exam_hint"
@@ -35,10 +17,11 @@
         android:textSize="@dimen/text_xlarge"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBar" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/layout_quick_choices"
+        style="?android:attr/buttonBarStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_xlarge"
@@ -53,21 +36,27 @@
             android:id="@+id/btn_exam_10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/btn_exam_10" />
+            android:text="@string/btn_exam_10"
+            android:drawableTop="@drawable/ic_timer"
+            android:drawablePadding="6dp" />
 
         <Button
             android:id="@+id/btn_exam_20"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
-            android:text="@string/btn_exam_20" />
+            android:text="@string/btn_exam_20"
+            android:drawableTop="@drawable/ic_timer"
+            android:drawablePadding="6dp"/>
 
         <Button
             android:id="@+id/btn_exam_30"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
-            android:text="@string/btn_exam_30" />
+            android:text="@string/btn_exam_30"
+            android:drawableTop="@drawable/ic_timer"
+            android:drawablePadding="6dp"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

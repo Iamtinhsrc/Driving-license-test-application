@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
 import com.example.driving_car_project.QuestionNavigator
 import com.example.driving_car_project.question.databinding.FragmentQuestionBinding
 
@@ -51,9 +50,9 @@ class QuestionFragment : Fragment() {
             navigator.navigateToDetail(this, question.id, categoryId)
         }
 
-        binding.toolbarQuestion.setNavigationOnClickListener {
-            findNavController().navigateUp()
-        }
+//        binding.toolbarQuestion.setNavigationOnClickListener {
+//            findNavController().navigateUp()
+//        }
 
         //binding.rvQuestions.layoutManager = LinearLayoutManager(requireContext())
         binding.rvQuestions.adapter = adapter

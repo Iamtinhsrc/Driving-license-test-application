@@ -45,7 +45,6 @@ dependencies {
     implementation(project(":core-network"))
     implementation(project(":core-utils"))
     implementation(project(":core-di"))
-    implementation(project(":core-ui"))
     implementation(project(":core-resources"))
     implementation(project(":core-navigation"))
 

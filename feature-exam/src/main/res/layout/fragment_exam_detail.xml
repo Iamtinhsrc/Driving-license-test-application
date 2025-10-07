@@ -72,6 +72,18 @@
             android:layout_height="wrap_content">
 
             <TextView
+                android:id="@+id/tv_question_result_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_large"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:visibility="gone"
+                tools:text="@string/label_question_result_pass"
+                tools:textColor="@android:color/holo_green_dark"/>
+
+
+            <TextView
                 android:id="@+id/tv_exam_question"
                 android:textStyle="bold"
                 android:textSize="@dimen/text_large"

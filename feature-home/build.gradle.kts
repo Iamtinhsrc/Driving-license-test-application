@@ -46,7 +46,6 @@ dependencies {
     implementation(project(":core-model"))
     implementation(project(":core-utils"))
     implementation(project(":core-di"))
-    api(project(":core-ui"))
     implementation(project(":core-resources"))
 
     implementation(project(":feature-question"))

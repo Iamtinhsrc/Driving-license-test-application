@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
 import com.example.driving_car_project.CategoryNavigator
 import com.example.driving_car_project.feature.category.databinding.FragmentCategoryBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -42,9 +41,9 @@ class CategoryFragment : Fragment() {
             navigator.navigateToQuestions(this, category.id)
         }
 
-        binding.toolbarCategory.setNavigationOnClickListener {
-            findNavController().navigateUp()
-        }
+//        binding.toolbarCategory.setNavigationOnClickListener {
+//            findNavController().navigateUp()
+//        }
 
         binding.rvCategories.adapter = adapter
 

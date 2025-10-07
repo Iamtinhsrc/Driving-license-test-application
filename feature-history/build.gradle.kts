@@ -42,13 +42,11 @@ android {
 dependencies {
     implementation(project(":core-model"))
     implementation(project(":core-utils"))
-    implementation(project(":core-ui"))
     implementation(project(":core-di"))
     implementation(project(":core-resources"))
     implementation(project(":core-navigation"))
 
     implementation(project(":infrastructure"))
-    //implementation(project(":feature-exam"))
 
     // Lifecycle
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.4")
@@ -75,8 +73,6 @@ dependencies {
     implementation(libs.androidx.room.ktx)
     implementation(libs.androidx.room.common)
     implementation(libs.androidx.espresso.contrib)
-    implementation(project(":core-di"))
-    implementation(project(":core-navigation"))
     ksp(libs.androidx.room.compiler)
 
     // Hilt

@@ -28,6 +28,7 @@ class ExamDetailAdapter(
         private val tvText: TextView = itemView.findViewById(R.id.tv_option_text)
         private val imgResult: ImageView = itemView.findViewById(R.id.img_result)
         private val tvSuggest: TextView = itemView.findViewById(R.id.tv_suggest)
+        private val imgChecked: ImageView = itemView.findViewById(R.id.img_checked)
 
         @SuppressLint("NotifyDataSetChanged")
         fun bind(option: AnswerOption) {
@@ -39,6 +40,8 @@ class ExamDetailAdapter(
             root.setBackgroundResource(R.drawable.selector_option_state)
             imgResult.visibility = View.GONE
             tvSuggest.visibility = View.GONE
+            imgChecked.visibility = View.GONE
+
 
             if (showResult || isReviewMode) {
                 when {
@@ -87,6 +90,7 @@ class ExamDetailAdapter(
                 // Trạng thái đang làm bài thi
                 if (option.label == selectedLabel) {
                     root.isSelected = true
+                    imgChecked.visibility = View.VISIBLE
                 }
             }
 

@@ -9,9 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.driving_car_project.feature.history.R
 import com.example.driving_car_project.feature.history.databinding.FragmentExamHistoryBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
@@ -49,9 +47,9 @@ class ExamHistoryFragment : Fragment() {
 
         }
 
-        binding.toolbarHistory.setNavigationOnClickListener {
-            findNavController().navigateUp()
-        }
+//        binding.toolbarHistory.setNavigationOnClickListener {
+//            findNavController().navigateUp()
+//        }
 
         binding.rvHistory.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)

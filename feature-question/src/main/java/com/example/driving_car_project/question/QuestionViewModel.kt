@@ -21,8 +21,8 @@ class QuestionViewModel @Inject constructor(
     private val _uiState = MutableStateFlow<QuestionUiState>(QuestionUiState.Idle)
     val uiState: StateFlow<QuestionUiState> = _uiState
 
-    private val _selectedQuestion = MutableStateFlow<Question?>(null)
-    val selectedQuestion: StateFlow<Question?> = _selectedQuestion
+//    private val _selectedQuestion = MutableStateFlow<Question?>(null)
+//    val selectedQuestion: StateFlow<Question?> = _selectedQuestion
 
 
     fun loadLocalOrRemoteQuestions() {
@@ -69,17 +69,17 @@ class QuestionViewModel @Inject constructor(
         }
     }
 
-    // Lay chi tiet 1 cau
-    fun loadQuestionById(id: Int) {
-        viewModelScope.launch(ioDispatcher) {
-            try {
-                val q = repository.getQuestionById(id)
-                _selectedQuestion.value = q
-            } catch (e: Exception) {
-                _selectedQuestion.value = null
-            }
-        }
-    }
+
+//    fun loadQuestionById(id: Int) {
+//        viewModelScope.launch(ioDispatcher) {
+//            try {
+//                val q = repository.getQuestionById(id)
+//                _selectedQuestion.value = q
+//            } catch (e: Exception) {
+//                _selectedQuestion.value = null
+//            }
+//        }
+//    }
 
 }
 

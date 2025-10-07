@@ -1,0 +1,14 @@
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/padding_xlarge">
+
+    <TextView
+        android:id="@+id/tvGuidePage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="@dimen/line_spacing_large"
+        android:textSize="@dimen/text_large"
+        android:textColor="@android:color/black"/>
+</androidx.core.widget.NestedScrollView>

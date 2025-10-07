@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("com.google.dagger.hilt.android") version "2.48"
     id("com.google.devtools.ksp") version "1.9.22-1.0.16"
 }
 
@@ -48,13 +49,18 @@ dependencies {
     // Room
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
-    implementation(libs.androidx.room.common)
     implementation(libs.androidx.espresso.contrib)
+    implementation(libs.androidx.room.common)
+    implementation(libs.androidx.foundation.android)
+    androidTestImplementation(project(":core-navigation"))
     ksp(libs.androidx.room.compiler)
 
     // Hilt
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
+
+    androidTestImplementation ("com.google.dagger:hilt-android-testing:2.48")
+    kspAndroidTest ("com.google.dagger:hilt-compiler:2.48")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

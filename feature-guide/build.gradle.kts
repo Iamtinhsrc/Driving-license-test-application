@@ -41,13 +41,15 @@ dependencies {
 
     implementation(project(":core-model"))
     implementation(project(":core-utils"))
-    implementation(project(":core-ui"))
     implementation(project(":core-resources"))
     implementation(project(":core-navigation"))
 
     // Navigation
     implementation("androidx.navigation:navigation-fragment-ktx:2.8.1")
     implementation("androidx.navigation:navigation-ui-ktx:2.8.1")
+
+    implementation ("androidx.viewpager2:viewpager2:1.1.0")
+
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

@@ -12,4 +12,9 @@
     <string name="dialog_submit">Nộp</string>
     <string name="dialog_cancel">Hủy</string>
 
+    <string name="label_question_result_pass">Bạn đã làm Đúng</string>
+    <string name="label_question_result_fail">Bạn đã làm Sai</string>
+    <string name="time_left">Thời gian còn lại: %1$02d:%2$02d</string>
+
+
 </resources>

@@ -60,7 +60,7 @@ class QuestionDetailAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AnswerViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(com.example.driving_car_project.core.resources.R.layout.item_answer_option, parent, false)
+            .inflate(R.layout.item_answer_option, parent, false)
         return AnswerViewHolder(view)
     }
 

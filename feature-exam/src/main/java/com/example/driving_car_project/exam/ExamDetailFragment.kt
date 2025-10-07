@@ -9,7 +9,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.driving_car_project.ExamNavigator
@@ -19,6 +18,7 @@ import com.example.driving_car_project.model.Question
 import com.example.driving_car_project.feature.exam.databinding.FragmentExamDetailBinding
 import com.example.driving_car_project.util.toAnswerOptions
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.launch
@@ -62,6 +62,12 @@ class ExamDetailFragment : Fragment() {
             if(!isPreview) {
                 val q = currentQuestions.getOrNull(currentQuestionIndex) ?: return@ExamDetailAdapter
                 viewModel.chooseAnswer(q.id, option.label)
+
+                // ✅ Auto next sau khi chọn
+                lifecycleScope.launch {
+                    delay(500) // cho user thấy tick trong 0.5s
+                    viewModel.next()
+                }
             }
         }
         binding.rvExamAnswers.layoutManager = LinearLayoutManager(requireContext())
@@ -72,9 +78,12 @@ class ExamDetailFragment : Fragment() {
             adapter.showResult()
             binding.btnSubmitExam.visibility = View.GONE
             binding.btnGoHome.visibility = View.VISIBLE
+            binding.tvTimer.visibility = View.GONE
+            binding.tvQuestionTimer.visibility = View.GONE
         } else {
             binding.btnSubmitExam.visibility = View.VISIBLE
             binding.btnGoHome.visibility = View.GONE
+
         }
 
 
@@ -112,7 +121,7 @@ class ExamDetailFragment : Fragment() {
             viewModel.examTimeLeft.collectLatest { seconds ->
                 val mm = seconds / 60
                 val ss = seconds % 60
-                binding.tvTimer.text = String.format("%02d:%02d", mm, ss)
+                binding.tvTimer.text = getString(R.string.time_left, mm, ss)
             }
         }
 
@@ -212,6 +221,22 @@ class ExamDetailFragment : Fragment() {
             adapter.setSelected(selected)
         } else {
             adapter.setSelected(null)
+        }
+
+        if (adapter.isReviewMode) {
+            val isCorrect = opts.any { it.label == selected && it.isCorrect }
+            binding.tvQuestionResultLabel.apply {
+                visibility = View.VISIBLE
+                text = if (isCorrect)
+                    getString(R.string.label_question_result_pass)
+                else getString(R.string.label_question_result_fail)
+                setTextColor(
+                    if (isCorrect) resources.getColor(android.R.color.holo_green_dark, null)
+                    else resources.getColor(android.R.color.holo_red_dark, null)
+                )
+            }
+        } else {
+            binding.tvQuestionResultLabel.visibility = View.GONE
         }
     }
 

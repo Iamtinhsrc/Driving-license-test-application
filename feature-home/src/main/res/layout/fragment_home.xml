@@ -50,13 +50,13 @@
 
         <Button
             android:id="@+id/btn_questions"
-            style="@style/Widget.MaterialComponents.Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/margin_large"
             android:background="@drawable/bg_button_primary"
             android:text="@string/btn_all_questions"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:drawableTop="@drawable/ic_question" />
 
         <Button
             android:id="@+id/btn_category"
@@ -65,7 +65,8 @@
             android:layout_marginBottom="@dimen/margin_large"
             android:background="@drawable/bg_button_primary"
             android:text="@string/btn_category"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:drawableTop="@drawable/ic_default_category"/>
 
         <Button
             android:id="@+id/btn_exam"
@@ -74,7 +75,8 @@
             android:layout_marginBottom="@dimen/margin_large"
             android:background="@drawable/bg_button_primary"
             android:text="@string/btn_exam"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:drawableTop="@drawable/ic_exam"/>
 
         <Button
             android:id="@+id/btn_history"
@@ -83,7 +85,8 @@
             android:layout_marginBottom="@dimen/margin_large"
             android:background="@drawable/bg_button_primary"
             android:text="@string/btn_history"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:drawableTop="@drawable/ic_history"/>
 
         <Button
             android:id="@+id/btn_guide"
@@ -93,6 +96,7 @@
             android:minHeight="48dp"
             android:text="@string/btn_guide"
             android:textColor="@color/white"
+            android:drawableTop="@drawable/ic_guide"
             tools:ignore="TouchTargetSizeCheck" />
     </LinearLayout>
 

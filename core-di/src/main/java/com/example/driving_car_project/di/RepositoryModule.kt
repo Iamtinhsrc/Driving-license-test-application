@@ -20,20 +20,18 @@ object RepositoryModule {
     // DataSources
     @Provides
     @Singleton
-    fun provideLocalDataSource(db: AppDatabase): com.example.driving_car_project.DataSource.LocalDataSource =
-        com.example.driving_car_project.DefaultLocalDataSource(db)
+    fun provideLocalDataSource(db: AppDatabase): DataSource.LocalDataSource = DefaultLocalDataSource(db)
 
     @Provides
     @Singleton
-    fun provideRemoteDataSource(service: QuestionService): com.example.driving_car_project.DataSource.RemoteDataSource =
-        com.example.driving_car_project.DefaultRemoteDataSource(service)
+    fun provideRemoteDataSource(service: QuestionService): DataSource.RemoteDataSource = DefaultRemoteDataSource(service)
 
     // Repository
     @Provides
     @Singleton
     fun provideRepository(
-        localDataSource: com.example.driving_car_project.DataSource.LocalDataSource,
-        remoteDataSource: com.example.driving_car_project.DataSource.RemoteDataSource
-    ) : com.example.driving_car_project.Repository =
-        com.example.driving_car_project.DefaultRepository(localDataSource, remoteDataSource)
+        localDataSource: DataSource.LocalDataSource,
+        remoteDataSource: DataSource.RemoteDataSource
+    ) : Repository =
+        DefaultRepository(localDataSource, remoteDataSource)
 }

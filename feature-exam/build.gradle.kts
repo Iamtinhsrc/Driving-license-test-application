@@ -43,7 +43,6 @@ dependencies {
 
     implementation(project(":core-model"))
     implementation(project(":core-utils"))
-    implementation(project(":core-ui"))
     implementation(project(":core-resources"))
     implementation(project(":core-network"))
     implementation(project(":feature-history"))
