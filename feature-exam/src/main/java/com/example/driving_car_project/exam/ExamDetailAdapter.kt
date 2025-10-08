@@ -4,119 +4,109 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.driving_car_project.model.AnswerOption
 import com.example.driving_car_project.core.resources.R
+import com.example.driving_car_project.core.resources.databinding.ItemAnswerOptionBinding
 
 class ExamDetailAdapter(
     private var options: List<AnswerOption>,
     private val onOptionSelected: (AnswerOption) -> Unit
-) : RecyclerView.Adapter<ExamDetailAdapter.AnswerOptionViewHolder>(){
+) : RecyclerView.Adapter<ExamDetailAdapter.AnswerOptionViewHolder>() {
 
     var isReviewMode: Boolean = false
     private var selectedLabel: String? = null
     private var showResult: Boolean = false
 
     inner class AnswerOptionViewHolder(
-        itemView: View
-    ) : RecyclerView.ViewHolder(itemView) {
-        private val root: LinearLayout = itemView.findViewById(R.id.root_option)
-        private val tvLabel: TextView = itemView.findViewById(R.id.tv_option_label)
-        private val tvText: TextView = itemView.findViewById(R.id.tv_option_text)
-        private val imgResult: ImageView = itemView.findViewById(R.id.img_result)
-        private val tvSuggest: TextView = itemView.findViewById(R.id.tv_suggest)
-        private val imgChecked: ImageView = itemView.findViewById(R.id.img_checked)
+        private val binding: ItemAnswerOptionBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
 
         @SuppressLint("NotifyDataSetChanged")
         fun bind(option: AnswerOption) {
-            tvLabel.text = option.label
-            tvText.text = option.text
+            binding.apply {
+                tvOptionLabel.text = option.label
+                tvOptionText.text = option.text
 
-            // reset trạng thái
-            root.isSelected = false
-            root.setBackgroundResource(R.drawable.selector_option_state)
-            imgResult.visibility = View.GONE
-            tvSuggest.visibility = View.GONE
-            imgChecked.visibility = View.GONE
+                // reset trạng thái
+                rootOption.isSelected = false
+                rootOption.setBackgroundResource(R.drawable.selector_option_state)
+                imgResult.visibility = View.GONE
+                tvSuggest.visibility = View.GONE
+                imgChecked.visibility = View.GONE
 
+                if (showResult || isReviewMode) {
+                    when {
+                        // Chọn đúng
+                        option.label == selectedLabel && option.isCorrect -> {
+                            rootOption.setBackgroundResource(R.drawable.bg_option_correct)
+                            imgResult.visibility = View.VISIBLE
+                            imgResult.setImageResource(android.R.drawable.checkbox_on_background)
+                            option.suggest?.let {
+                                tvSuggest.visibility = View.VISIBLE
+                                tvSuggest.text = "Giải thích: $it"
+                            }
+                        }
 
-            if (showResult || isReviewMode) {
-                when {
-                    // Chọn đúng
-                    option.label == selectedLabel && option.isCorrect -> {
-                        root.setBackgroundResource(R.drawable.bg_option_correct)
-                        imgResult.visibility = View.VISIBLE
-                        imgResult.setImageResource(android.R.drawable.checkbox_on_background)
-                        option.suggest?.let {
-                            tvSuggest.visibility = View.VISIBLE
-                            tvSuggest.text = "Giải thích: $it"
+                        // Chọn sai
+                        option.label == selectedLabel && !option.isCorrect -> {
+                            rootOption.setBackgroundResource(R.drawable.bg_option_wrong)
+                            imgResult.visibility = View.VISIBLE
+                            imgResult.setImageResource(android.R.drawable.ic_delete)
+                        }
+
+                        // Không chọn gì nhưng có đáp án đúng
+                        selectedLabel.isNullOrEmpty() && option.isCorrect -> {
+                            rootOption.setBackgroundResource(R.drawable.bg_option_correct)
+                            imgResult.visibility = View.VISIBLE
+                            imgResult.setImageResource(android.R.drawable.checkbox_on_background)
+                            option.suggest?.let {
+                                tvSuggest.visibility = View.VISIBLE
+                                tvSuggest.text = "Giải thích: $it"
+                            }
+                        }
+
+                        // Highlight đáp án đúng khi chọn sai
+                        option.isCorrect -> {
+                            rootOption.setBackgroundResource(R.drawable.bg_option_correct)
+                            imgResult.visibility = View.VISIBLE
+                            imgResult.setImageResource(android.R.drawable.checkbox_on_background)
+                            option.suggest?.let {
+                                tvSuggest.visibility = View.VISIBLE
+                                tvSuggest.text = "Giải thích: $it"
+                            }
                         }
                     }
-
-                    // Chọn sai
-                    option.label == selectedLabel && !option.isCorrect -> {
-                        root.setBackgroundResource(R.drawable.bg_option_wrong)
-                        imgResult.visibility = View.VISIBLE
-                        imgResult.setImageResource(android.R.drawable.ic_delete)
-                    }
-
-                    // Người dùng không chọn gì
-                    selectedLabel.isNullOrEmpty() && option.isCorrect -> {
-                        root.setBackgroundResource(R.drawable.bg_option_correct)
-                        imgResult.visibility = View.VISIBLE
-                        imgResult.setImageResource(android.R.drawable.checkbox_on_background)
-                        option.suggest?.let {
-                            tvSuggest.visibility = View.VISIBLE
-                            tvSuggest.text = "Giải thích: $it"
-                        }
-                    }
-
-                    // Người dùng chọn sai đáp án khác → vẫn highlight đáp án đúng
-                    option.isCorrect -> {
-                        root.setBackgroundResource(R.drawable.bg_option_correct)
-                        imgResult.visibility = View.VISIBLE
-                        imgResult.setImageResource(android.R.drawable.checkbox_on_background)
-                        option.suggest?.let {
-                            tvSuggest.visibility = View.VISIBLE
-                            tvSuggest.text = "Giải thích: $it"
-                        }
+                } else {
+                    // Đang làm bài thi
+                    if (option.label == selectedLabel) {
+                        rootOption.isSelected = true
+                        imgChecked.visibility = View.VISIBLE
                     }
                 }
-            }
-            else {
-                // Trạng thái đang làm bài thi
-                if (option.label == selectedLabel) {
-                    root.isSelected = true
-                    imgChecked.visibility = View.VISIBLE
-                }
-            }
 
-            // Chỉ cho chọn khi đang làm bài (chưa nộp & chưa review)
-            root.setOnClickListener {
-                if (!showResult && !isReviewMode) {
-                    selectedLabel = option.label
-                    onOptionSelected(option)
-                    notifyDataSetChanged()
+                // Xử lý click chọn đáp án
+                rootOption.setOnClickListener {
+                    if (!showResult && !isReviewMode) {
+                        selectedLabel = option.label
+                        onOptionSelected(option)
+                        notifyDataSetChanged()
+                    }
                 }
             }
         }
-
-
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AnswerOptionViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_answer_option, parent, false)
-        return AnswerOptionViewHolder(view)
+        val binding = ItemAnswerOptionBinding.inflate(
+            LayoutInflater.from(parent.context),
+            parent,
+            false
+        )
+        return AnswerOptionViewHolder(binding)
     }
 
-    override fun getItemCount(): Int {
-        return options.size
-    }
+    override fun getItemCount(): Int = options.size
 
     override fun onBindViewHolder(holder: AnswerOptionViewHolder, position: Int) {
         holder.bind(options[position])
