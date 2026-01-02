@@ -1,10 +1,10 @@
-# 🚗 Driving License Test Application
+# Driving License Test Application
 
 Ứng dụng thi bằng lái xe ô tô được phát triển bằng **Kotlin** theo kiến trúc **MVVM** và sử dụng **multi-module architecture** để tách biệt logic từng phần, giúp dễ dàng mở rộng và bảo trì.
 
 ---
 
-## 🧩 Cấu trúc module
+## Cấu trúc module
 
 Dự án được chia thành nhiều module nhỏ, đảm nhiệm các vai trò riêng biệt:
 
@@ -20,7 +20,7 @@ Dự án được chia thành nhiều module nhỏ, đảm nhiệm các vai trò
 
 ---
 
-## ⚙️ Công nghệ & Kỹ thuật sử dụng
+## Công nghệ & Kỹ thuật sử dụng
 
 * **Ngôn ngữ:** Kotlin
 * **Kiến trúc:** MVVM (Model - View - ViewModel)
@@ -34,7 +34,7 @@ Dự án được chia thành nhiều module nhỏ, đảm nhiệm các vai trò
 
 ---
 
-## 📱 Tính năng chính
+## Tính năng chính
 
 * Thi sát hạch lý thuyết (Exam feature)
 * Xem lại lịch sử làm bài (History)
@@ -46,7 +46,7 @@ Dự án được chia thành nhiều module nhỏ, đảm nhiệm các vai trò
 
 ---
 
-## 🧠 Kiến thức & kỹ năng đạt được
+## Kiến thức & kỹ năng đạt được
 
 * Xây dựng ứng dụng Android theo mô hình **MVVM**
 * Thiết lập **multi-module Gradle project**
@@ -56,7 +56,7 @@ Dự án được chia thành nhiều module nhỏ, đảm nhiệm các vai trò
 
 ---
 
-## 🚀 Hướng phát triển
+## Hướng phát triển
 
 * Tích hợp **API online** cho bộ câu hỏi và kết quả thi.
 * Thêm **chức năng đăng nhập/đăng ký** với Firebase Authentication.
@@ -66,13 +66,13 @@ Dự án được chia thành nhiều module nhỏ, đảm nhiệm các vai trò
 
 ---
 
-## 📎 Link dự án
+## Link dự án
 
 GitHub: [Driving License Test Application](https://github.com/Iamtinhsrc/Driving-license-test-application)
 
 ---
 
-## 👨‍💻 Tác giả
+## Tác giả
 
 **Ngô Chí Tình** - 
 Intern Android Developer - 
