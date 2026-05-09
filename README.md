@@ -13,7 +13,7 @@ Dự án được chia thành nhiều module nhỏ, đảm nhiệm các vai trò
 * **core-di** — Cấu hình **Hilt Dependency Injection**.
 * **core-model** — Định nghĩa các model dùng chung giữa các module.
 * **core-navigation** — Xử lý điều hướng giữa các màn hình bằng **Navigation Component (Safe Args)**.
-* **core-network** — Dùng Retrofit.
+* **core-network** — Dùng Retrofit, OkHttp, Gson, API service
 * **core-resources** — Quản lý string, color, dimension, drawable chung.
 * **core-utils** — Các hàm tiện ích (extension,....).
 * **feature-category / feature-exam / feature-home / feature-question / feature-history / feature-guide** — Mỗi module là một tính năng riêng biệt.
@@ -28,9 +28,8 @@ Dự án được chia thành nhiều module nhỏ, đảm nhiệm các vai trò
 * **Database:** Room
 * **Navigation:** Navigation Component (Safe Args)
 * **Asynchronous:** Kotlin Coroutines + Flow
-* **Testing:** Unit Test & UI Test
 * **UI:** ViewBinding, RecyclerView, ConstraintLayout
-* **Pattern:** Repository Pattern, Clean Architecture, Modularization
+* **Pattern:** Repository Pattern, Modularization
 
 ---
 
@@ -58,7 +57,7 @@ Dự án được chia thành nhiều module nhỏ, đảm nhiệm các vai trò
 
 ## Hướng phát triển
 
-* Tích hợp **API online** cho bộ câu hỏi và kết quả thi.
+* Mở rộng đồng bộ dữ liệu online.
 * Thêm **chức năng đăng nhập/đăng ký** với Firebase Authentication.
 * Đồng bộ dữ liệu với **Cloud Firestore hoặc Realtime Database**.
 * Áp dụng **Paging 3** để tải danh sách câu hỏi lớn.
